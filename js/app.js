@@ -21,9 +21,12 @@ prototypeApp.config(function($routeProvider) {
 	$routeProvider.otherwise({redirectTo: '/'}); // редирект в случае ошибочного адреса (изменить на /400)
 	// $locationProvider.html5Mode(true).hashPrefix('#');  // для замены хешей в путях
 });
+
+
 prototypeApp.controller('mainController', function($scope) { $scope.message = 'Everyone come and see how good I look!'; });
 prototypeApp.controller('aboutController', function($scope) { $scope.message = 'Look! I am an about page.'; });
 prototypeApp.controller('contactController', function($scope) { $scope.message = 'Contact us! JK. This is just a demo.'; });
+
 
 /* amitgharat.wordpress.com/2013/02/03/an-approach-to-use-jquery-plugins-with-angularjs/ */
 prototypeApp.directive('jq.draggable', function() {
