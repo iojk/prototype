@@ -3,24 +3,28 @@
 var prototypeApp = angular.module('prototypeApp', ['ngRoute']);
 
 /* роутинг */
-prototypeApp.config(function($routeProvider) {
-	$routeProvider
-		.when('/', {
-			templateUrl : 'page/home.html',
-			controller  : 'mainController'
-		})
-		.when('/about', {
-			templateUrl : 'page/about.html',
-			controller  : 'aboutController'
-		})
-		.when('/contact', {
-			templateUrl : 'page/contact.html',
-			controller  : 'contactController'
-		})
+
+prototypeApp.config(['$routeProvider', '$locationProvider',
+	function($routeProvider, $locationProvider) {
+		//$locationProvider.html5Mode(true); устранение хешей в урлах
+		$routeProvider
+			.when('/', {
+				templateUrl : 'page/home.html',
+				controller  : 'mainController'
+			})
+			.when('/about', {
+				templateUrl : 'page/about.html',
+				controller  : 'aboutController'
+			})
+			.when('/contact', {
+				templateUrl : 'page/contact.html',
+				controller  : 'contactController'
+			})
+			.otherwise({redirectTo: '/'})
 		;
-	$routeProvider.otherwise({redirectTo: '/'}); // редирект в случае ошибочного адреса (изменить на /400)
-	// $locationProvider.html5Mode(true).hashPrefix('#');  // для замены хешей в путях
-});
+	}
+]);
+
 prototypeApp.controller('mainController', function($scope) { $scope.message = 'Everyone come and see how good I look!'; });
 prototypeApp.controller('aboutController', function($scope) { $scope.message = 'Look! I am an about page.'; });
 prototypeApp.controller('contactController', function($scope) { $scope.message = 'Contact us! JK. This is just a demo.'; });
