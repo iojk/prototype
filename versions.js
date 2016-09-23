@@ -14,14 +14,15 @@ $('a[href*="#/"]').each(function(){
 	});
 });
 
+/* в момент загрузки страницы */
 $('#prototype-version-select option').each(function(){
 	var version = $(this).attr('value').replace(/\.\.\//,'').replace(/\/#\//,'');
-	/* выбор активной версии прототипа */
+	// выбор активной версии прототипа
 	if ( window_location_href.indexOf(version) != -1 ) {
 		$(this).attr('selected','selected');
 	} // если версия открытого экрана соответствует пункту меню
-	/* навешивание коротких ссылок при переходе внутри версии */
-	if ( version == version_ref ) {
+	// навешивание коротких ссылок при переходе внутри версии
+	if ( version == version_ref || version_ref == '' ) {
 		$(this).attr('value',$(this).attr('value').replace(/\/#\/.*/,'/#'+link_page));
 	}
 });
