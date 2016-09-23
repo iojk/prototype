@@ -1,4 +1,4 @@
-// script.js
+// app.js
 
 var prototypeApp = angular.module('prototypeApp', ['ngRoute']);
 

@@ -9,13 +9,4 @@
 	</div>
 </form>
 
-<script>
-	// выбор активной версии прототипа
-	$('#prototype-version-select option').each(function(){
-		var link_version = $(this).attr('value').replace(/\.\.\//,'').replace(/\/#\//,'');
-		var window_location_href = window.location.href;
-		if ( window_location_href.indexOf(link_version) != -1 ) {
-			$(this).attr('selected','selected');
-		}
-	});
-</script>
+<script defer src="../versions.js"></script>
