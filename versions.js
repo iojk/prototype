@@ -35,7 +35,11 @@ $('#prototype-version-select option').each(function(){
 	} // если версия открытого экрана соответствует пункту меню
 	// навешивание коротких ссылок при переходе внутри версии
 	if ( version == version_ref || version_ref == '' ) {
-		$(this).attr('value',$(this).attr('value').replace(/\/#\/.*/,'/#'+link_page));
+		if ( color_model_ref != null ) {
+        	$(this).attr('value',$(this).attr('value').replace(/\/#\/.*/,'/#'+link_page+'?'+color_model_ref.toString()));
+        } else {
+        	$(this).attr('value',$(this).attr('value').replace(/\/#\/.*/,'/#'+link_page+'?'+color_model));
+        }
 	}
 });
 
