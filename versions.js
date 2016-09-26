@@ -43,11 +43,11 @@ $('#prototype-version-select option').each(function(){
 	}
 });
 
-/* выбор цветовой модели в панели версий при старте */
+/* установка цветовой модели в панели версий при старте */
 $('#prototype-color-select option').each(function(){
 	var option_value = $(this).attr('value');
 	if ( $('body').attr('class').toString().indexOf(option_value) != -1 ) {
-    		$(this).attr('selected','selected');
+    	$(this).attr('selected','selected');
     }
 });
 /* при переключении цветовой модели в панели версий */
