@@ -7,6 +7,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- frontender.com.ua/mobile-web/wtf-viewport/ -->
 	<script defer src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 	<script defer src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.min.js"></script>
+	<!--[if lt IE 9]>
+	<script defer src="//html5shiv/3.7.3/html5shiv.min.js"></script>
+	<![endif]-->
 <!-- jQuery -->
 	<script defer src="//code.jquery.com/jquery-latest.min.js"></script>
 	<script defer src="//code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
@@ -22,12 +25,12 @@
 <!-- Application -->
 	<link rel="stylesheet/less" href="style/app.less">
 </head>
-<body ng-controller="mainController">
+<body ng-controller="mainController" class="colors-olive">
 	<!-- HEADER -->
-	<header class="bg-primary app-header" ng-include="'template/app-header.html'"></header>
+	<header class="app-header" ng-include="'template/app-header.html'"></header>
 	<!-- MAIN CONTENT -->
 	<div class="app-content" ng-view></div>
 	<!-- PANEL OF VERSIONS -->
-	<footer class="container-fluid bg-info navbar-fixed-bottom" ng-include="'../versions.html'"></footer>
+	<footer class="prototype-versions container-fluid navbar-fixed-bottom" ng-include="'../versions.html'"></footer>
 </body>
 </html>

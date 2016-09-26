@@ -1,9 +1,20 @@
 <form class="navbar">
+	<h4 class="footer-header col-md-1 pull-right">Prototype</h4>
 	<div class="form-group">
 		<label id="prototype-version-select">Version:
 			<select class="btn btn-sm btn-primary" onchange="top.location=this.value">
 				<option value="../v.01.000/#/">v.01.000</option>
 				<option value="../v.01.001/#/">v.01.001</option>
+			</select>
+		</label>
+		<label id="prototype-color-select">Color Model:
+			<select class="btn btn-sm btn-primary">
+				<option value="colors-brown">Brown</option>
+				<option value="colors-olive">Olive</option>
+				<option value="colors-lilac">Lilac</option>
+				<option value="colors-peru">Peru</option>
+				<option value="colors-teal">Teal</option>
+				<option value="colors-gray">Gray</option>
 			</select>
 		</label>
 	</div>
@@ -12,10 +23,8 @@
 <script defer src="../versions.js"></script>
 
 <style>
-	/**/
 	footer form.navbar { padding-bottom: 0; }
-	footer form.navbar .form-group { display: none; margin-bottom: 0; }
-
-	footer form.navbar:hover { height: auto; }
-	footer form.navbar:hover .form-group { display: block; }
+	footer form.navbar :header { margin-bottom: 0; }
+	footer form.navbar .form-group { margin-bottom: 0; }
+	footer .footer-header { margin-bottom: 0; }
 </style>
