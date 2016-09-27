@@ -1,6 +1,6 @@
 <form class="navbar">
 	<h4 class="footer-header pull-right">Prototype</h4>
-	<div class="form-group">
+	<div class="form-group text-xs-center">
 		<label id="prototype-version-select">Version:
 			<select class="btn btn-sm btn-primary" onchange="top.location=this.value">
 				<option value="../v.01.000/#/">v.01.000</option>
@@ -24,7 +24,9 @@
 
 <style>
 	footer form.navbar { padding-bottom: 0; }
-	footer form.navbar :header { margin-bottom: 0; }
 	footer form.navbar .form-group { margin-bottom: 0; }
+	footer form.navbar .form-group label { padding-right: 1rem; }
+	footer form.navbar .form-group label select { text-align: left; }
+	footer form.navbar .form-group label select option { padding-left: 0.5rem; }
 	footer .footer-header { margin-bottom: 0; }
 </style>
