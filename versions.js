@@ -58,6 +58,9 @@ $('#prototype-color-select select').on('change', function() {
 	$('a[href*="#/"]').each(function(){
 		$(this).attr('href',$(this).attr('href').replace(/\?.*|$/,'?'+option_value));
 	});
+	$('#prototype-version-select option').each(function(){
+		$(this).attr('value',$(this).attr('value').replace(/\?.*|$/,'?'+option_value));
+	}); // добавление цветности в переключалку версий
 });
 
 
