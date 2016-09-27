@@ -2,6 +2,7 @@
 
 var window_location_href = window.location.href; // полный адрес активного экрана
 var link_page = window_location_href.match(/\/#\/.*$/).toString().replace(/\/#/,'').replace(/\?.*/,''); // короткий адрес активного экрана
+var link = window.location.hash; // адрес после решетки
 var version_ref = document.referrer.replace(/.*\/prototype\//,'').replace(/\/.*/,'');
 var color_model = $('body').attr('class').match(/\S*colors-\S*\s/).toString().replace(/\s/g,''); // имя цветовой модели
 var color_model_ref = window.location.hash.match(/colors-[a-z]+/);
@@ -19,7 +20,7 @@ $('a[href*="#/"]').each(function(){
     	$(this).attr('href',$(this).attr('href').replace(/\?.*|$/,'?'+color_model));
     }  // добавляем имя цветовой модели от предыдущей версии просмотра
 	$(this).click(function(){
-		var link = $(this).attr('href');
+		link = $(this).attr('href');
 		$('#prototype-version-select option').each(function(){
 			$(this).attr('value',$(this).attr('value').replace(/\/#\/.*/,'/'+link));
 		});
@@ -53,7 +54,7 @@ $('#prototype-color-select option').each(function(){
 /* при переключении цветовой модели в панели версий */
 $('#prototype-color-select select').on('change', function() {
 	var option_value = this.value;
-	window.location = window_location_href.replace(/\?.*/,'')+'?'+option_value;
+	window.location = link.replace(/\?.*/,'')+'?'+option_value;
 	$('body').attr('class',$('body').attr('class').replace(/colors-[a-z]*/g,'')).addClass(option_value);
 	$('a[href*="#/"]').each(function(){
 		$(this).attr('href',$(this).attr('href').replace(/\?.*|$/,'?'+option_value));
