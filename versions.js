@@ -22,6 +22,7 @@ $('a[href*="#/"]').each(function(){
     }  // добавляем имя цветовой модели от предыдущей версии просмотра
 	$(this).click(function(){
 		link = $(this).attr('href');
+		return link;
 		$('#prototype-version-select option').each(function(){
 			$(this).attr('value',$(this).attr('value').replace(/\/#\/.*/,'/'+link));
 		});
