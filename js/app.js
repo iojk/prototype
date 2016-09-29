@@ -1,5 +1,10 @@
 // app.js
 
+$('head').append('\
+	<link rel="shortcut icon" href="../favicon.ico">\
+	<link rel="icon" href="../favicon.ico">\
+');
+
 $('body').append('\
 	<footer class="prototype-versions container-fluid navbar-fixed-bottom" ng-include="\'../versions.html\'"></footer>'
 ); // автоподключение футера
