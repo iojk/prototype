@@ -39,6 +39,12 @@ prototypeApp.directive('jq.indicator', function() {
     	link: function() { click_indicator('.jq-indicator','active'); }
     };
 });
+prototypeApp.directive('jq.lazyload', function() {
+    return {
+    	restrict: 'A',
+    	link: function() { $('.jq-lazyload').lazyload( { effect: 'fadeIn' } ); }
+    };
+});
 
 $('head').prepend('\
 	<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"><!-- эта meta должна быть первой, иначе не сработает! -->\
