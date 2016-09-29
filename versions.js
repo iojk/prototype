@@ -17,7 +17,6 @@ $('a[href*="#/"]').each(function(){
 		address_short = $(this).attr('href').replace(/#/,'').replace(/\?.*/,'');
 	});
 });
-
 $('#prototype-color-select select').change(function(){
 	address_colors = $(this).val();
 	doc_colors = address_colors;
@@ -41,6 +40,9 @@ if (address_colors_r) { // цвет объявлен в запросе адре�
 	linkChange('a[href*="#/"]',/(\?.*)|$/,doc_colors);
 	versionChange('#prototype-version-select select',doc_colors);
 }
+
+/* кнопка скрытия нижней панели */
+$('.footer-close').click(function(){ $(this).closest('.navbar').hide(); });
 
 /* вставка цветовой модели в ссылки */
 function linkChange(selector,mask,modifier) {
