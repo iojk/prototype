@@ -19,7 +19,6 @@ $('a[href*="#/"]').each(function(){
 	$(this).click(function(){
 		address_short = $(this).attr('href').replace(/#/,'').replace(/\?.*/,'');
 	});
-	versionChange('#prototype-version-select select',address_colors);
 });
 $('#prototype-color-select select').change(function(){
 	address_colors = $(this).val();
