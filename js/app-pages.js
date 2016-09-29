@@ -1,7 +1,5 @@
 // единые скрипты для всех внутренних страниц
 
-$(function() {
-    /* вставка кастомного тайтла в заголовок страницы */
-    $('head title').text($('h1').text()+', '+$('head title').text().replace(/.*, /,''));
-});
+$('head title').text($('h1').text()+', '+$('head title').text().replace(/.*, /,''));
+
 
