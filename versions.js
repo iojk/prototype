@@ -11,6 +11,9 @@ var address_colors = ''; // имя цветовой модели
 var doc_version = $('base').attr('href').replace(/..\//,'').replace(/\/.*/,''); // имя версии из заголовка документа
 var doc_colors = $('body').attr('class').match(/colors-[^ ]*/).toString(); // имя цветовой модели
 
+/* кнопка скрытия нижней панели */
+$('.footer-close').click(function(){ $(this).closest('.navbar').hide(); });
+
 /* начальная установка параметров */
 $('a[href*="#/"]').each(function(){
 	$(this).click(function(){
@@ -40,9 +43,6 @@ if (address_colors_r) { // цвет объявлен в запросе адре�
 	linkChange('a[href*="#/"]',/(\?.*)|$/,doc_colors);
 	versionChange('#prototype-version-select select',doc_colors);
 }
-
-/* кнопка скрытия нижней панели */
-$('.footer-close').click(function(){ $(this).closest('.navbar').hide(); });
 
 /* вставка цветовой модели в ссылки */
 function linkChange(selector,mask,modifier) {
