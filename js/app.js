@@ -1,5 +1,9 @@
 // app.js
 
+$('body').append('\
+	<footer class="prototype-versions container-fluid navbar-fixed-bottom" ng-include="\'../versions.html\'"></footer>'
+); // автоподключение футера
+
 var prototypeApp = angular.module('prototypeApp', ['ngRoute']);
 
 /* роутинг */

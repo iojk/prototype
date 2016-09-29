@@ -1,0 +1,8 @@
+footer form.navbar { padding-bottom: 0; }
+footer form.navbar .form-group { margin-bottom: 0; }
+footer form.navbar .form-group label { padding-right: 1rem; }
+footer form.navbar .form-group label select { text-align: left; }
+footer form.navbar .form-group label select option { padding-left: 0.5rem; }
+footer .footer-header { margin-bottom: 0; }
+footer .footer-close { opacity: .3; cursor: default; }
+footer .footer-close:hover { opacity: 1; }
