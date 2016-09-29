@@ -19,6 +19,14 @@ $('a[href*="#/"]').each(function(){
 	});
 });
 
+$('#prototype-color-select select').change(function(){
+	address_colors = $(this).val()
+	window.location = '../' + address_version + '/#' + address_short + '?' + address_colors;
+	colorChange('body',address_colors);
+	linkChange('a[href*="#/"]',/$/,address_colors);
+    versionChange('#prototype-version-select select',address_colors);
+});
+
 if (address_colors_r) { // цвет объявлен в запросе адресной строки
 	address_search = address_search_r.toString();
 	address_colors = address_colors_r.toString();
@@ -30,6 +38,12 @@ if (address_colors_r) { // цвет объявлен в запросе адре�
 	versionChange('#prototype-version-select select',doc_colors);
 }
 
+/* вставка цветовой модели в ссылки */
+function linkChange(selector,mask,modifier) {
+	$(selector).each(function(){
+		$(this).attr('href',$(this).attr('href').replace(mask,'?'+modifier));
+	});
+}
 /* вставка цветовой модели в нижнее меню */
 function versionChange(selector,colors) {
 	$(selector).find('option').each(function(){
@@ -43,15 +57,13 @@ function versionChange(selector,colors) {
 	});
 }
 
-/* вставка цветовой модели в ссылки */
-function linkChange(selector,mask,modifier) {
-	$(selector).each(function(){
-		$(this).attr('href',$(this).attr('href').replace(mask,'?'+modifier));
-	});
-}
-
 /* смена цветовой модели документа */
 function colorChange(selector,modifier) {
+	$(selector).find('option').each(function(){
+		var color = $(this).attr('value');
+		if ( address_location.indexOf(color) != -1 ) {
+        	$(this).attr('selected','selected'); // выбор активной цветовой модели прототипа
+        } // если цветовая модель открытого экрана соответствует пункту меню
+	});
 	$(selector).attr('class',$(selector).attr('class').replace(/colors-[^ ]*/g,'')).addClass(modifier);
 }
-
