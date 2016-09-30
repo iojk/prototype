@@ -3,9 +3,18 @@
 <div class="jumbotron text-center">
 	<h1>Home Page</h1>
 	<p>{{ message }}</p>
+	<h4>Извлечение данных JSON</h4>
+	<table class="table table-striped">
+		<tr>
+			<th>Код</th>
+			<th>Страна</th>
+			<th>Население</th>
+		</tr>
+		<tr ng-repeat="country in countries | orderBy: 'code'">
+			<td>{{country.code}}</td>
+			<td>{{country.name}}</td>
+			<td>{{country.population}}</td>
+		</tr>
+	</table>
+	<img class="jq-lazyload" data-original="../img/lazyload.png">
 </div>
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<img class="jq-lazyload" data-original="../img/lazyload.png">
