@@ -5,12 +5,11 @@
 	<script defer src="//code.jquery.com/jquery-latest.min.js"></script>
 	<script defer src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
 	<script defer src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>
+	<script defer src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
 	<script defer src="../js/app.js"></script><!-- все остальные скрипты -->
 </head>
 <body ng-controller="mainController" class="colors-brown">
-	<!-- HEADER -->
 	<header class="app-header" ng-include="'template/app-header.html'"></header>
-	<!-- MAIN CONTENT -->
 	<div jq.lazyload class="app-content" ng-view></div>
 </body>
 </html>
