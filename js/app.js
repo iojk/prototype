@@ -25,7 +25,7 @@ prototypeApp.controller('aboutController', function($scope) {
 prototypeApp.controller('contactController', function($scope) {
 	$scope.message = 'Contact us! JK. This is just a demo.';
 });
- 
+
 /* amitgharat.wordpress.com/2013/02/03/an-approach-to-use-jquery-plugins-with-angularjs */
 prototypeApp.directive('jq.draggable', function() {
     return { restrict: 'A', link: function() { $('.jq-draggable').draggable( { grid: [ 50, 20 ], cursor: 'crosshair' } ); } };
