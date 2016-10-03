@@ -13,6 +13,7 @@ prototypeApp.config(['$routeProvider', '$locationProvider',
 			.when('/about', { templateUrl : 'page/about.html', controller  : 'aboutController' })
 			.when('/contact', { templateUrl : 'page/contact.html', controller  : 'contactController' })
 			.when('/icons', { templateUrl : 'page/icons.html', controller  : 'iconsController' })
+			.when('/forms', { templateUrl : 'page/forms.html', controller  : 'formsController' })
 			.otherwise({ redirectTo: '/' })
 		;
 	}
@@ -29,6 +30,9 @@ prototypeApp.controller('contactController', function($scope) {
 });
 prototypeApp.controller('iconsController', function($scope) {
 	$scope.message = 'Icons Collections';
+});
+prototypeApp.controller('formsController', function($scope) {
+	$scope.message = 'Forms Collections';
 });
 
 /* amitgharat.wordpress.com/2013/02/03/an-approach-to-use-jquery-plugins-with-angularjs */
