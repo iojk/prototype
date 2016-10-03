@@ -1,6 +1,6 @@
 // app.js
 
-$.ajax({type:'GET',cache:true,dataType:'script',url:'../js/get/html-doc-head.js'}); // добавление метатегов и скриптов в заголовок html-документа
+$.ajax({type:'GET',cache:true,dataType:'script',url:'../get/html/html-doc-head.js'}); // добавление метатегов и скриптов в заголовок html-документа
 $('body').append('<footer class="prototype-versions container-fluid navbar-fixed-bottom" ng-include="\'../versions.html\'"></footer>');
 
 /* роутинг */
@@ -18,7 +18,7 @@ prototypeApp.config(['$routeProvider', '$locationProvider',
 ]);
 prototypeApp.controller('mainController', function($scope, $http) {
 	$scope.message = 'Everyone come and see how good I look!';
-	$http.get('../js/json/countries.json').success(function(listCountries) { $scope.countries = listCountries; });
+	$http.get('../get/json/countries.json').success(function(listCountries) { $scope.countries = listCountries; });
 });
 prototypeApp.controller('aboutController', function($scope) {
 	$scope.message = 'Look! I am an about page.';

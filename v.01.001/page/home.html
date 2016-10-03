@@ -6,11 +6,12 @@
 	<select id="countries" class="form-control">
 		<option disabled>Выберите страну</option>
 	</select>
-	<script type="text/javascript">
-		$.getJSON('../js/json/countries.json', function(data) {
-		    for(var i=0; i<data.length; i++) {
-		        $('#countries').append('<option value="' + i + '">' + data[i].name + '</option>');
-		    }
-		});
-	</script>
 </div>
+
+<script type="text/javascript">
+	$.getJSON('../get/json/countries.json', function(data) {
+		for(var i=0; i<data.length; i++) {
+			$('#countries').append('<option value="' + i + '">' + data[i].name + '</option>');
+		}
+	});
+</script>
