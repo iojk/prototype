@@ -4,6 +4,7 @@
 @import "bootstrap-var"; // ручной перенос переменных из SASS
 @import "//netdna.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.css"; // требуется для бутстрапа
 @import "//cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/css/tether-theme-arrows-dark.min.css"; // требуется для бутстрапа
+@import "//qtip2.com/v/stable/jquery.qtip.css";
 @import "//code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.min.css";
 @import "//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/black/pace-theme-minimal.min.css";  // индикатор загрузки страницы
 
@@ -11,6 +12,11 @@
 
 body { overflow-y: scroll; font-family: "Roboto", sans-serif; padding-bottom: 10rem; }
 a { text-decoration: underline; }
+
+.alert, .card { box-shadow: 0 0 1px rgba(0, 0, 0, 0.2); } // улучшение резкости рамок
+
+[title] { cursor: default; }
+
 .btn, .form-control {
 	margin-bottom: @btn-block-spacing-y;  // для выравнивания кнопок по вертикали с кнопочными блоками
 	&[data-toggle="collapse"]:before { content: "\f196"; font-family: FontAwesome; font-size: 1rem + 0.7*@font-shift; line-height: 0; opacity: 0.5; }

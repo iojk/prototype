@@ -1,7 +1,6 @@
 // app.js
 
 $.ajax({type:'GET',cache:true,dataType:'script',url:'../get/html/html-doc-head.js'}); // добавление метатегов и скриптов в заголовок html-документа
-$.ajax({type:'GET',cache:true,dataType:'script',url:'//cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js'});
 $('body').append('<footer class="prototype-versions container-fluid navbar-fixed-bottom" ng-include="\'../versions.html\'"></footer>');
 
 /* роутинг */
@@ -50,5 +49,12 @@ prototypeApp.directive('jq.indicator', function() {
 /* ленивая подгрузка картинок */
 prototypeApp.directive('jq.lazyload', function() {
     return { restrict: 'A', link: function() { $('.jq-lazyload').lazyload( { effect: 'fadeIn', event: 'scroll' } ); } };
+});
+/* ленивая подгрузка картинок */
+prototypeApp.directive('jq.qtip', function() {
+    return { restrict: 'A', link: function() { $('[title!=""]').qtip( {
+		position: { target: 'mouse', adjust: { x: -10, y: 20 } },
+		style: { classes: 'qtip-youtube qtip-rounded' }} ); }
+	};
 });
 
