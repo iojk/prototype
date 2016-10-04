@@ -16,7 +16,6 @@ $('head').prepend('\
 <!-- jQuery -->\
 	<script defer src="//code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>\
 	<script defer src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script><!-- индикатор загрузки github.hubspot.com/pace/docs/welcome/ -->\
-	<script defer src="//cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/basic/jquery.qtip.min.js"></script>\
 	<script defer src="../js/jquery/functions.js"></script>\
 <!-- Bootstrap -->\
 	<script defer src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js"></script>\

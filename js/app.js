@@ -50,7 +50,7 @@ prototypeApp.directive('jq.indicator', function() {
 prototypeApp.directive('jq.lazyload', function() {
     return { restrict: 'A', link: function() { $('.jq-lazyload').lazyload( { effect: 'fadeIn', event: 'scroll' } ); } };
 });
-/* ленивая подгрузка картинок */
+/* тултипы qtip2.com */
 prototypeApp.directive('jq.qtip', function() {
     return { restrict: 'A', link: function() { $('[title!=""]').qtip( {
 		position: { target: 'mouse', adjust: { x: -10, y: 20 } },
