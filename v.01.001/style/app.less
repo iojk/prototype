@@ -15,6 +15,9 @@ a { text-decoration: underline; }
 
 .alert, .card { box-shadow: 0 0 1px rgba(0, 0, 0, 0.2); } // улучшение резкости рамок
 
+[data-toggle="collapse"]:before { content: "\f196"; font-family: FontAwesome; font-size: 1rem + 0.7*@font-shift; line-height: 0; opacity: 0.5; }
+[data-toggle="collapse"][aria-expanded="true"]:before { content: "\f147"; }
+
 [title], .input-group-addon { cursor: default; }
 
 .btn {
@@ -22,8 +25,7 @@ a { text-decoration: underline; }
 	margin-top:     .12*@btn-block-spacing-y;
 	padding-bottom: .88*@btn-block-spacing-y;
 	padding-top:    .88*@btn-block-spacing-y;
-	&[data-toggle="collapse"]:before { content: "\f196"; font-family: FontAwesome; font-size: 1rem + 0.7*@font-shift; line-height: 0; opacity: 0.5; }
-	&[data-toggle="collapse"][aria-expanded="true"]:before { content: "\f147"; }
+
 }
 .form-inline { margin-bottom: -@btn-block-spacing-y; }
 
