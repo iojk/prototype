@@ -15,10 +15,13 @@ a { text-decoration: underline; }
 
 .alert, .card { box-shadow: 0 0 1px rgba(0, 0, 0, 0.2); } // улучшение резкости рамок
 
-[title] { cursor: default; }
+[title], .input-group-addon { cursor: default; }
 
-.btn, .form-control {
-	margin-bottom: @btn-block-spacing-y;  // для выравнивания кнопок по вертикали с кнопочными блоками
+.btn {
+	margin-bottom:  .12*@btn-block-spacing-y;  // для выравнивания кнопок по вертикали с кнопочными блоками
+	margin-top:     .12*@btn-block-spacing-y;
+	padding-bottom: .88*@btn-block-spacing-y;
+	padding-top:    .88*@btn-block-spacing-y;
 	&[data-toggle="collapse"]:before { content: "\f196"; font-family: FontAwesome; font-size: 1rem + 0.7*@font-shift; line-height: 0; opacity: 0.5; }
 	&[data-toggle="collapse"][aria-expanded="true"]:before { content: "\f147"; }
 }
@@ -34,6 +37,7 @@ a { text-decoration: underline; }
 
 label {
 	&.row { display: block } // для вертикального деления секций форм
+	&:hover .form-control  { box-shadow: 0 0 23px @input-border-focus; }
 }
 
 .input-group-addon {
