@@ -7,20 +7,27 @@
 @import "//code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.min.css";
 @import "//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/black/pace-theme-minimal.min.css";  // индикатор загрузки страницы
 
-body { overflow-y: scroll; font-family: "Roboto", sans-serif; }
-
 @font-shift: 0.13rem; // 0.13rem - 0.31rem для тонких подчеркиваний
+
+body { overflow-y: scroll; font-family: "Roboto", sans-serif; padding-bottom: 10rem; }
+a { text-decoration: underline; }
+.btn, .form-control {
+	margin-bottom: @btn-block-spacing-y;  // для выравнивания кнопок по вертикали с кнопочными блоками
+	&[data-toggle="collapse"]:before { content: "\f196"; font-family: FontAwesome; font-size: 1rem + 0.7*@font-shift; line-height: 0; opacity: 0.5; }
+	&[data-toggle="collapse"][aria-expanded="true"]:before { content: "\f147"; }
+}
+.form-inline { margin-bottom: -@btn-block-spacing-y; }
 
 .fa { font-size: 1rem + @font-shift; margin-top: -1*@font-shift; } // вертикальное выравнивание иконок в строке
 
-.nav-link { text-decoration: underline;
+.nav-link {
 	.fa { text-decoration: underline;
-		&.fa-table { font-size: 1rem + @font-shift; } // маска для корректировки резкозти иконок
+		&.fa-table { font-size: 1rem + 5*@font-shift; margin-top: -5*@font-shift; } // маска для корректировки резкозти иконок
 	}
 }
 
 label {
-	&.row { display: block }
+	&.row { display: block } // для вертикального деления секций форм
 }
 
 .input-group-addon {

@@ -9,11 +9,12 @@ var prototypeApp = angular.module('prototypeApp', ['ngRoute']);
 prototypeApp.config(['$routeProvider', '$locationProvider',
 	function($routeProvider, $locationProvider) {
 		$routeProvider
-			.when('/', { templateUrl : 'page/home.html', controller  : 'mainController' })
-			.when('/about', { templateUrl : 'page/about.html', controller  : 'aboutController' })
-			.when('/contact', { templateUrl : 'page/contact.html', controller  : 'contactController' })
-			.when('/icons', { templateUrl : 'page/icons.html', controller  : 'iconsController' })
-			.when('/forms', { templateUrl : 'page/forms.html', controller  : 'formsController' })
+			.when('/', { templateUrl: 'page/home.html', controller: 'mainController' })
+			.when('/about', { templateUrl: 'page/about.html', controller: 'aboutController' })
+			.when('/contact', { templateUrl: 'page/contact.html', controller: 'contactController' })
+			.when('/icons', { templateUrl: 'page/icons.html', controller: 'iconsController' })
+			.when('/forms', { templateUrl: 'page/forms.html', controller: 'formsController' })
+			.when('/colors', { templateUrl: 'page/colors.html', controller: 'colorsController' })
 			.otherwise({ redirectTo: '/' })
 		;
 	}
@@ -33,6 +34,9 @@ prototypeApp.controller('iconsController', function($scope) {
 });
 prototypeApp.controller('formsController', function($scope) {
 	$scope.message = 'Forms Collections';
+});
+prototypeApp.controller('colorsController', function($scope) {
+	$scope.message = 'Colors Elements';
 });
 
 /* amitgharat.wordpress.com/2013/02/03/an-approach-to-use-jquery-plugins-with-angularjs */
