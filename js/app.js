@@ -57,4 +57,17 @@ prototypeApp.directive('jq.qtip', function() {
 		style: { classes: 'qtip-youtube qtip-rounded' }} ); }
 	};
 });
+/* тултипы qtip2.com */
+prototypeApp.directive('jq.datetimepicker', function() {
+    return { restrict: 'A', link: function() { $('.jq-datetimepicker').datetimepicker( {
+    	locale: 'ru',
+    	icons: {
+			time: "fa fa-clock-o",
+			date: "fa fa-calendar",
+			up: "fa fa-arrow-up",
+			down: "fa fa-arrow-down"
+		}
+    } ); } };
+});
+
 
