@@ -11,8 +11,16 @@
 @import "bootstrap-var"; // ручной перенос переменных из SASS
 @font-shift: 0.13rem; // 0.13rem - 0.31rem для тонких подчеркиваний
 
-body { overflow-y: scroll; font-family: "Roboto", sans-serif; padding-bottom: 10rem; }
+
+body { overflow-y: scroll; font-family: "Roboto", sans-serif; margin-bottom: 10rem; }
 a { text-decoration: underline; }
+
+/* модальные окна */
+body { display: table; box-sizing: content-box; width: 100%; }
+body.container { display: block; width: auto; padding-left: 32px; padding-right: 32px; }
+body.modal-open { overflow-y: scroll; }
+body > * { box-sizing: border-box; } // восстанавливаем бокс-модель бутстрапа
+.ui-draggable-handle { cursor: move; }
 
 /* widget datetimepicker */
 .glyphicon { font-family: FontAwesome; font-weight: normal;
@@ -38,7 +46,6 @@ a { text-decoration: underline; }
 	margin-top:     .12*@btn-block-spacing-y;
 	padding-bottom: .88*@btn-block-spacing-y;
 	padding-top:    .88*@btn-block-spacing-y;
-
 }
 .form-inline { margin-bottom: -@btn-block-spacing-y; }
 

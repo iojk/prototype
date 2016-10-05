@@ -38,10 +38,6 @@ prototypeApp.controller('colorsController', function($scope) {
 	$scope.message = 'Colors Elements';
 });
 
-/* amitgharat.wordpress.com/2013/02/03/an-approach-to-use-jquery-plugins-with-angularjs */
-prototypeApp.directive('jq.draggable', function() {
-    return { restrict: 'A', link: function() { $('.jq-draggable').draggable( { grid: [ 50, 20 ], cursor: 'crosshair' } ); } };
-});
 /* установка модификатора родителю по клику на дочернем элементе */
 prototypeApp.directive('jq.indicator', function() {
     return { restrict: 'A', link: function() { click_indicator('.jq-indicator','active'); } };
@@ -69,5 +65,12 @@ prototypeApp.directive('jq.datetimepicker', function() {
 		}
     } ); } };
 });
-
+/* перемещаемые элементы amitgharat.wordpress.com/2013/02/03/an-approach-to-use-jquery-plugins-with-angularjs  */
+prototypeApp.directive('jq.draggable', function() {
+    return { restrict: 'A', link: function() { $('.jq-draggable').draggable( {
+		cursor: 'move',
+		grid: [ 20, 20 ],
+		handle: '.jq-drag-handle'
+    } ); } };
+}); /* api.jqueryui.com/draggable */
 

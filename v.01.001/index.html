@@ -3,6 +3,7 @@
 <head>
 	<base href="../v.01.001/#/">
 	<script defer src="//code.jquery.com/jquery-latest.min.js"></script>
+	<script defer src="//code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
 	<script defer src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
 	<script defer src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>
 	<script defer src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
@@ -14,6 +15,6 @@
 </head>
 <body ng-controller="mainController" class="colors-teal container">
 	<header class="app-header" ng-include="'template/app-header.html'"></header>
-	<div jq.lazyload jq.qtip jq.datetimepicker class="app-content" ng-view></div>
+	<div jq.lazyload jq.qtip jq.datetimepicker jq.draggable class="app-content" ng-view></div>
 </body>
 </html>
