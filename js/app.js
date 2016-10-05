@@ -57,7 +57,7 @@ prototypeApp.directive('jq.qtip', function() {
 		style: { classes: 'qtip-youtube qtip-rounded' }} ); }
 	};
 });
-/* тултипы qtip2.com */
+/* выбор даты и времени eonasdan.github.io/bootstrap-datetimepicker */
 prototypeApp.directive('jq.datetimepicker', function() {
     return { restrict: 'A', link: function() { $('.jq-datetimepicker').datetimepicker( {
     	locale: 'ru',
