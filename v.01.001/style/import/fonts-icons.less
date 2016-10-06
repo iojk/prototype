@@ -3,15 +3,14 @@
 
 @font-shift: 0.13rem; // 0.13rem - 0.31rem для тонких подчеркиваний
 
+.fa { font-size: 1rem + @font-shift; margin-top: -1*@font-shift; } // вертикальное выравнивание иконок в строке
 /* маленькие индикаторы для элементов раскрытия секций */
 [data-toggle="collapse"]:before { content: "\f196"; font-family: FontAwesome; font-size: 1rem + 0.7*@font-shift; line-height: 0; opacity: 0.5; }
 [data-toggle="collapse"][aria-expanded="true"]:before { content: "\f147"; }
 
 /* маленькие индикаторы для элементов раскрытия секций */
-.nav-link {
-	.fa { text-decoration: underline;
-		&.fa-table { font-size: 1rem + 5*@font-shift; margin-top: -5*@font-shift; } // маска для корректировки резкозти иконок
-	}
+.nav-link .fa { text-decoration: underline;
+	&.fa-table { font-size: 1rem + 5*@font-shift; margin-top: -5*@font-shift; } // маска для корректировки резкозти иконок
 }
 
 /* замена аналогов glyphicon на FontAwesome */

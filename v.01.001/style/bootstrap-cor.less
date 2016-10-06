@@ -1,0 +1,27 @@
+// Bootstrap Correct
+
+/* модальные окна */
+body { display: table; box-sizing: content-box; width: 100%; }
+body.container { display: block; width: auto; padding-left: 32px; padding-right: 32px; }
+body.modal-open { overflow-y: scroll; }
+body > * { box-sizing: border-box; } // восстанавливаем бокс-модель бутстрапа
+
+/* улучшение резкости рамок */
+.alert, .card { box-shadow: 0 0 1px rgba(0, 0, 0, 0.2); }
+
+/* для выравнивания кнопок по вертикали с кнопочными блоками */
+.btn {
+	margin-bottom:  .12*@btn-block-spacing-y;
+	margin-top:     .12*@btn-block-spacing-y;
+	padding-bottom: .88*@btn-block-spacing-y;
+	padding-top:    .88*@btn-block-spacing-y;
+}
+
+/* Элементы форм */
+label {
+	&.row { display: block } // для обеспечения вертикального деления секций форм
+	&:hover .form-control  { box-shadow: 0 0 23px @input-border-focus; } // подсветка контрола по наведению на его ярлык
+}
+.input-group-addon { cursor: default; // для предотвращения мелькания курсора
+	&.fa { display: table-cell; } // чтобы иконки внутри кнопок не ломали контрол (наследование от .input-group-addon)
+}
