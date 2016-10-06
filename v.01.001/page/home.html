@@ -6,6 +6,20 @@
 	<select id="countries" class="form-control">
 		<option disabled>Выберите страну</option>
 	</select>
+	<br>
+	<table class="table table-striped">
+		<tr>
+			<th>Код</th>
+			<th>Страна</th>
+			<th>Население</th>
+		</tr>
+		<tr ng-repeat="country in countries | orderBy: 'code'">
+			<td>{{country.code}}</td>
+			<td>{{country.name}}</td>
+			<td>{{country.population}}</td>
+		</tr>
+	</table>
+	<img class="jq-lazyload" data-original="../img/lazyload.png">
 </div>
 
 <script type="text/javascript">
