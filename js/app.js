@@ -71,11 +71,17 @@ prototypeApp.directive('jq.datetimepicker', function() {
 });
 /* перемещаемые элементы amitgharat.wordpress.com/2013/02/03/an-approach-to-use-jquery-plugins-with-angularjs  */
 prototypeApp.directive('jq.draggable', function() {
-    return { restrict: 'A', link: function() { $('.jq-draggable').draggable( {
-		cursor: 'move',
-		grid: [ 20, 20 ],
-		handle: '.jq-drag-handle'
-    } ); } };
+    return { restrict: 'A', link: function() {
+		$('.jq-draggable').draggable( {
+			cursor: 'move',
+			grid: [ 20, 20 ]
+		} ); // для сплошных перемещаемых элементов
+		$('.jq-drag-handle').draggable( {
+			cursor: 'move',
+			grid: [ 20, 20 ],
+			handle: '.jq-drag-handler'
+    	} ); // для перемещаемых элементов с хваталками
+    } };
 }); /* api.jqueryui.com/draggable */
 
 
