@@ -22,6 +22,8 @@ label {
 	&.row { display: block } // для обеспечения вертикального деления секций форм
 	&:hover .form-control  { box-shadow: 0 0 23px @input-border-focus; } // подсветка контрола по наведению на его ярлык
 }
-.input-group-addon { cursor: default; // для предотвращения мелькания курсора
+.form-control { font-family: 'Roboto Mono', monospace; }
+.input-group-addon {
+	cursor: default; // для предотвращения мелькания курсора
 	&.fa { display: table-cell; } // чтобы иконки внутри кнопок не ломали контрол (наследование от .input-group-addon)
 }

@@ -14,6 +14,7 @@ prototypeApp.config(['$routeProvider', '$locationProvider',
 			.when('/icons', { templateUrl: 'page/icons.html', controller: 'iconsController' })
 			.when('/forms', { templateUrl: 'page/forms.html', controller: 'formsController' })
 			.when('/colors', { templateUrl: 'page/colors.html', controller: 'colorsController' })
+			.when('/tables', { templateUrl: 'page/tables.html', controller: 'tablesController' })
 			.otherwise({ redirectTo: '/' })
 		;
 	}
@@ -36,6 +37,9 @@ prototypeApp.controller('formsController', function($scope) {
 });
 prototypeApp.controller('colorsController', function($scope) {
 	$scope.message = 'Colors Elements';
+});
+prototypeApp.controller('tablesController', function($scope) {
+	$scope.message = 'Grid Systems';
 });
 
 /* установка модификатора родителю по клику на дочернем элементе */
