@@ -1,0 +1,11 @@
+/* widget datetimepicker */
+.jq-datetimepicker {
+	&+.bootstrap-datetimepicker-widget { width: auto; // для более компактного размера календаря
+		.decade, .year, .month, .day { border-radius: 0; }
+        .day { padding: 0.5ex 0.5em; font-size: @font-size-xs; }
+        .glyphicon { cursor: pointer; } // чтобы курсор не мелькал
+	}
+}
+
+
+

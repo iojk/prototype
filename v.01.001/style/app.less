@@ -8,9 +8,13 @@
 @import "//code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.min.css";
 @import "//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/black/pace-theme-minimal.min.css";  // индикатор загрузки страницы
 
-@import "bootstrap-var"; // ручной перенос переменных из SASS
-@font-shift: 0.13rem; // 0.13rem - 0.31rem для тонких подчеркиваний
 
+@import "bootstrap-var"; // ручной перенос переменных из SASS
+
+@import "import/fonts-icons";
+
+/* WITGETS */
+@import "widget/datetimepicker";
 
 body { overflow-y: scroll; font-family: "Roboto", sans-serif; margin-bottom: 10rem; }
 a { text-decoration: underline; }
@@ -22,22 +26,12 @@ body.modal-open { overflow-y: scroll; }
 body > * { box-sizing: border-box; } // восстанавливаем бокс-модель бутстрапа
 .ui-draggable-handle { cursor: move; }
 
-/* widget datetimepicker */
-.glyphicon { font-family: FontAwesome; font-weight: normal;
-	.bootstrap-datetimepicker-widget & { cursor: pointer; }
-}
-.glyphicon-chevron-left:before { content: '\f104'; }
-.glyphicon-chevron-right:before { content: '\f105'; }
-.jq-datetimepicker .bootstrap-datetimepicker-widget {
-	width: auto;
-	th, td { padding: 0 0.5rem; border-radius: 0; }
-	.day { padding: 0.2rem 0.5rem; }
-}
+
+
 
 .alert, .card { box-shadow: 0 0 1px rgba(0, 0, 0, 0.2); } // улучшение резкости рамок
 
-[data-toggle="collapse"]:before { content: "\f196"; font-family: FontAwesome; font-size: 1rem + 0.7*@font-shift; line-height: 0; opacity: 0.5; }
-[data-toggle="collapse"][aria-expanded="true"]:before { content: "\f147"; }
+
 
 [title], .input-group-addon { cursor: default; }
 
@@ -51,11 +45,7 @@ body > * { box-sizing: border-box; } // восстанавливаем бокс-
 
 .fa { font-size: 1rem + @font-shift; margin-top: -1*@font-shift; } // вертикальное выравнивание иконок в строке
 
-.nav-link {
-	.fa { text-decoration: underline;
-		&.fa-table { font-size: 1rem + 5*@font-shift; margin-top: -5*@font-shift; } // маска для корректировки резкозти иконок
-	}
-}
+
 
 label {
 	&.row { display: block } // для вертикального деления секций форм
