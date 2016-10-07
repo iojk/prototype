@@ -12,10 +12,17 @@
 	<script defer src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/locale/ru.js"></script>
 	<script defer src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.42/js/bootstrap-datetimepicker.min.js"></script>
 	<script defer src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.min.js"></script>
+	<script defer src="../js/jquery/one-simple-table-paging.js"></script>
 	<script defer src="../js/app.js"></script><!-- все остальные скрипты -->
 </head>
 <body ng-controller="mainController" class="colors-teal container">
 	<header class="app-header" ng-include="'template/app-header.html'"></header>
-	<div jq.lazyload jq.qtip jq.datetimepicker jq.draggable class="app-content" ng-view></div>
+	<div class="app-content"
+		jq.lazyload
+		jq.qtip
+		jq.datetimepicker
+		jq.draggable
+		jq.tablepaging
+		ng-view></div>
 </body>
 </html>

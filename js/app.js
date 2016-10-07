@@ -46,6 +46,13 @@ prototypeApp.controller('tablesController', function($scope) {
 prototypeApp.directive('jq.indicator', function() {
     return { restrict: 'A', link: function() { click_indicator('.jq-indicator','active'); } };
 });
+/* пейджинг таблиц */
+prototypeApp.directive('jq.tablepaging', function() {
+    return { restrict: 'A', link: function() { $('.jq-tablepaging').oneSimpleTablePagination( {
+    	topNav: true,
+		rowsPerPage: 10
+    } ); } };
+});
 /* ленивая подгрузка картинок */
 prototypeApp.directive('jq.lazyload', function() {
     return { restrict: 'A', link: function() { $('.jq-lazyload').lazyload( { effect: 'fadeIn', event: 'scroll' } ); } };

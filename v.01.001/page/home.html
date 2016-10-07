@@ -7,13 +7,13 @@
 		<option disabled>Выберите страну</option>
 	</select>
 	<br>
-	<table class="table table-striped">
+	<table class="table table-striped jq-tablepaging">
 		<tr>
 			<th>Код</th>
 			<th>Страна</th>
 			<th>Население</th>
 		</tr>
-		<tr ng-repeat="country in countries | orderBy: 'code'">
+		<tr ng-repeat="country in countries | orderBy: 'code' | limitTo: 10">
 			<td>{{country.code}}</td>
 			<td>{{country.name}}</td>
 			<td>{{country.population}}</td>
