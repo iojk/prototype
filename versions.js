@@ -12,9 +12,10 @@ var doc_version = $('base').attr('href').replace(/..\//,'').replace(/\/.*/,''); 
 var doc_colors = $('body').attr('class').match(/colors-[^ ]*/).toString(); // имя цветовой модели
 
 /* кнопка скрытия нижней панели */
-$('.footer-close').click(function(){ $(this).closest('.navbar').hide(); });
+$('.footer-close').click(function(){ $(this).closest('.prototype-versions').hide(); });
 
 /* начальная установка параметров */
+$('.versions-padding').height(0.5*$('.prototype-versions .navbar').height()); // установка высоты нижнего отступа по высоте панели версий
 $('a[href*="#/"]').each(function(){
 	$(this).click(function(){
 		address_short = $(this).attr('href').replace(/#/,'').replace(/\?.*/,'');

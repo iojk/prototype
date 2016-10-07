@@ -1,7 +1,7 @@
 // app.js
 
 $.ajax({type:'GET',cache:true,dataType:'script',url:'../get/html/html-doc-head.js'}); // добавление метатегов и скриптов в заголовок html-документа
-$('body').append('<footer class="prototype-versions container-fluid navbar-fixed-bottom" ng-include="\'../versions.html\'"></footer>');
+$('body').append('<footer class="prototype-versions container-fluid" ng-include="\'../versions.html\'"></footer>');
 
 /* роутинг */
 var prototypeApp = angular.module('prototypeApp', ['ngRoute']);
