@@ -38,16 +38,28 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="
+			<!-- change from ng-repeat to dir-paginate attribute -->
+			<tr dir-paginate="
 			country in countries |
 			orderBy: sortType: sortReverse |
-			filter: searchCountry"
-			><!--  | limitTo: 10" step="2" -->
+			filter: searchCountry |
+			itemsPerPage: 99999">
 				<td>{{country.code}}</td>
 				<td>{{country.name}}</td>
 				<td>{{country.population}}</td>
 			</tr>
 		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="999">
+					<dir-pagination-controls
+						boundary-links="true"
+						on-page-change="pageChangeHandler(newPageNumber)"
+						template-url="../get/tpl/dirPagination.tpl.html">
+					</dir-pagination-controls>
+				</td>
+			</tr>
+		</tfoot>
 	</table>
 	<img class="jq-lazyload" data-original="../img/lazyload.png">
 

@@ -5,7 +5,7 @@ $('body').append('<footer class="prototype-versions container-fluid" ng-include=
 
 
 /* роутинг */
-var prototypeApp = angular.module('prototypeApp', ['ngRoute']);
+var prototypeApp = angular.module('prototypeApp', ['ngRoute','angularUtils.directives.dirPagination']);
 prototypeApp.config(['$routeProvider', '$locationProvider',
 	function($routeProvider, $locationProvider) {
 		$routeProvider
