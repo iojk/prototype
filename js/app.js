@@ -42,9 +42,10 @@ prototypeApp.controller('colorsController', function($scope) {
 prototypeApp.controller('tablesController', function($scope, $http) {
 	$scope.message = 'Grid Systems';
 	$http.get('../get/json/countries.json').success(function(listCountries) { $scope.countries = listCountries; });
-	$scope.sortType     = 'code'; // set the default sort type
-	$scope.sortReverse  = false;  // set the default sort order
-	$scope.searchCountry   = '';     // set the default search/filter term
+	$scope.sortType = 'code'; // set the default sort type
+	$scope.sortReverse = false; // set the default sort order
+	$scope.searchCountry = ''; // set the default search/filter term
+	$scope.rowsPerPage = 5; // число строк таблицы для пажинации
 });
 
 /* установка модификатора родителю по клику на дочернем элементе */
@@ -57,6 +58,13 @@ prototypeApp.directive('jq.tablepaging', function() {
     	topNav: true,
 		rowsPerPage: 10
     } ); } };
+});
+prototypeApp.directive('jq.formservice', function() {
+	return { restrict: 'A', link: function() {
+		input_width_auto('onkeyup','.input-width-auto',0.62,0.75*2);
+		input_width_auto('onkeyup','.number-width-auto',0.62,0.75*2+0.3);
+		input_width_auto('onclick','.number-width-auto',0.62,0.75*2+0.3);
+	} };
 });
 /* ленивая подгрузка картинок */
 prototypeApp.directive('jq.lazyload', function() {
