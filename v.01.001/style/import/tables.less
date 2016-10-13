@@ -12,8 +12,15 @@
 	td, th {
 		border-top-color: transparent;
 		box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+		&.text-right { text-align: right; }
+		&.text-left { text-align: left; }
 	}
 	tfoot {
 		td, th { box-shadow: none; }
+	}
+	&.table-striped {
+		&:hover {
+			tr:nth-of-type(2n+1) { background-color: transparent; }
+		}
 	}
 }

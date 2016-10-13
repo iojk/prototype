@@ -12,3 +12,8 @@ input { input-width: default; }
 [ng-click], // дефолтный курсор кликабельных элементов
 [title] { cursor: default; } // для плагина тултипа, чтобы подпись всегда была под указателем-стрелкой
 
+// ПОДСВЕТКА
+[ng-click] {
+	td&:hover, th&:hover { background-color: rgba(0,0,0,.1); }
+}
+tr:hover td { background-color: rgba(0,0,0,.1); }

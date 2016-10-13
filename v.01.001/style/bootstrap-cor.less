@@ -35,6 +35,7 @@ label {
 /* Пажинация */
 .pagination { margin-left: auto; margin-right: auto; display: table; } // выравниваем блок пажинации по центру
 .page-link { border-color: @light-border-color; text-decoration: underline;
+	.disabled & { text-decoration: none; }
 	.page-item &, .page-item &:focus, .page-item &:hover,
 	.page-item.disabled &, .page-item.disabled &:focus, .page-item.disabled &:hover,
 	.page-item.active &, .page-item.active &:focus, .page-item.active &:hover { border-color: @light-border-color; }
