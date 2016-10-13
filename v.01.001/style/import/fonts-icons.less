@@ -14,8 +14,11 @@
 [data-toggle="collapse"][aria-expanded="true"]:before { content: "\f147"; }
 
 /* маленькие индикаторы для элементов раскрытия секций */
-.nav-link .fa { text-decoration: underline;
+.fa {
+	.nav-link { text-decoration: underline; }
+	&.input-group-addon { line-height: 0; }
 	&.fa-table { font-size: 1rem + 5*@font-shift; margin-top: -5*@font-shift; } // маска для корректировки резкозти иконок
+	&.fa-search { font-size: 1rem + 2.5*@font-shift; margin-top: -2.5*@font-shift; }
 }
 
 /* замена аналогов glyphicon на FontAwesome */

@@ -20,7 +20,7 @@ body > * { box-sizing: border-box; } // восстанавливаем бокс-
 /* Элементы форм */
 label {
 	&.row { display: block } // для обеспечения вертикального деления секций форм
-	&:hover .form-control  { box-shadow: 0 0 23px @input-border-focus; } // подсветка контрола по наведению на его ярлык
+	&:hover .form-control  { border-color: @input-border-focus; } // подсветка контрола по наведению на его ярлык
 }
 .form-control { font-family: 'Roboto Mono', monospace; }
 .input-group-addon {

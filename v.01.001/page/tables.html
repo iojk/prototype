@@ -10,25 +10,29 @@
 		<p>Sort Reverse: {{ sortReverse }}</p>
 		<p>Search Query: {{ searchCountry }}</p>
 	</div>
+
 	<form class="form-inline">
 		<div class="form-group">
-			<label>Search</label>
-			<input type="text" ng-model="searchCountry" class="form-control" placeholder="Search">
+			<label class="input-group">
+				<div class="input-group-addon fa fa-search"></div>
+				<input type="text" class="form-control" placeholder="Search" ng-model="searchCountry">
+			</label>
 		</div>
 	</form>
+
 	<table class="table table-striped">
 		<thead>
 			<tr>
-				<th ng-click="sortType = 'code'; sortReverse = !sortReverse"
-				    class="fa {{ sortType == 'code' && sortReverse ? 'fa-caret-up' : 'fa-caret-down' }}">
+				<th ng-click="sortType = 'code'; sortReverse = !sortReverse">
+					<i class="fa {{ sortType == 'code' && sortReverse ? 'fa-caret-up' : 'fa-caret-down' }}"></i>
 					<div class="th-content">Код</div>
 				</th>
-				<th ng-click="sortType = 'name'; sortReverse = !sortReverse"
-				    class="fa {{ sortType == 'name' && sortReverse ? 'fa-caret-up' : 'fa-caret-down' }}">
+				<th ng-click="sortType = 'name'; sortReverse = !sortReverse">
+				    <i class="fa {{ sortType == 'name' && sortReverse ? 'fa-caret-up' : 'fa-caret-down' }}"></i>
 					<div class="th-content">Страна</div>
 				</th>
-				<th ng-click="sortType = 'population'; sortReverse = !sortReverse"
-				    class="fa {{ sortType == 'population' && sortReverse ? 'fa-caret-up' : 'fa-caret-down' }}">
+				<th ng-click="sortType = 'population'; sortReverse = !sortReverse">
+					<i class="fa {{ sortType == 'population' && sortReverse ? 'fa-caret-up' : 'fa-caret-down' }}"></i>
 					<div class="th-content">Население</div>
 				</th>
 			</tr>
