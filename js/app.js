@@ -3,6 +3,7 @@
 $.ajax({type:'GET',cache:true,dataType:'script',url:'../get/html/html-doc-head.js'}); // добавление метатегов и скриптов в заголовок html-документа
 $('body').append('<footer class="prototype-versions container-fluid" ng-include="\'../versions.html\'"></footer>');
 
+
 /* роутинг */
 var prototypeApp = angular.module('prototypeApp', ['ngRoute']);
 prototypeApp.config(['$routeProvider', '$locationProvider',
@@ -38,8 +39,12 @@ prototypeApp.controller('formsController', function($scope) {
 prototypeApp.controller('colorsController', function($scope) {
 	$scope.message = 'Colors Elements';
 });
-prototypeApp.controller('tablesController', function($scope) {
+prototypeApp.controller('tablesController', function($scope, $http) {
 	$scope.message = 'Grid Systems';
+	$http.get('../get/json/countries.json').success(function(listCountries) { $scope.countries = listCountries; });
+	$scope.sortType     = 'code'; // set the default sort type
+	$scope.sortReverse  = false;  // set the default sort order
+	$scope.searchCountry   = '';     // set the default search/filter term
 });
 
 /* установка модификатора родителю по клику на дочернем элементе */

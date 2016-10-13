@@ -6,26 +6,14 @@
 	<select id="countries" class="form-control">
 		<option disabled>Выберите страну</option>
 	</select>
-	<br>
-	<table class="table table-striped jq-tablepaging">
-		<tr>
-			<th>Код</th>
-			<th>Страна</th>
-			<th>Население</th>
-		</tr>
-		<tr ng-repeat="country in countries | orderBy: 'code' | limitTo: 10">
-			<td>{{country.code}}</td>
-			<td>{{country.name}}</td>
-			<td>{{country.population}}</td>
-		</tr>
-	</table>
-	<img class="jq-lazyload" data-original="../img/lazyload.png">
 </div>
+
 
 <script type="text/javascript">
 	$.getJSON('../get/json/countries.json', function(data) {
 		for(var i=0; i<data.length; i++) {
 			$('#countries').append('<option value="' + i + '">' + data[i].name + '</option>');
 		}
-	});
+	}); // подгрузка json-модели к выпадающему списку
 </script>
+

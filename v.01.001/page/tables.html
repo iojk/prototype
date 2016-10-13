@@ -4,5 +4,48 @@
 	<h1>Tables</h1>
 	<p>{{message}}</p>
 
+	<br>
+	<div class="alert alert-info">
+		<p>Sort Type: {{ sortType }}</p>
+		<p>Sort Reverse: {{ sortReverse }}</p>
+		<p>Search Query: {{ searchCountry }}</p>
+	</div>
+	<form class="form-inline">
+		<div class="form-group">
+			<label>Search</label>
+			<input type="text" ng-model="searchCountry" class="form-control" placeholder="Search">
+		</div>
+	</form>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th ng-click="sortType = 'code'; sortReverse = !sortReverse"
+				    class="fa {{ sortType == 'code' && sortReverse ? 'fa-caret-up' : 'fa-caret-down' }}">
+					<div class="th-content">Код</div>
+				</th>
+				<th ng-click="sortType = 'name'; sortReverse = !sortReverse"
+				    class="fa {{ sortType == 'name' && sortReverse ? 'fa-caret-up' : 'fa-caret-down' }}">
+					<div class="th-content">Страна</div>
+				</th>
+				<th ng-click="sortType = 'population'; sortReverse = !sortReverse"
+				    class="fa {{ sortType == 'population' && sortReverse ? 'fa-caret-up' : 'fa-caret-down' }}">
+					<div class="th-content">Население</div>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="
+			country in countries |
+			orderBy: sortType: sortReverse |
+			filter: searchCountry"
+			><!--  | limitTo: 10" step="2" -->
+				<td>{{country.code}}</td>
+				<td>{{country.name}}</td>
+				<td>{{country.population}}</td>
+			</tr>
+		</tbody>
+	</table>
+	<img class="jq-lazyload" data-original="../img/lazyload.png">
+
 </div>
 
