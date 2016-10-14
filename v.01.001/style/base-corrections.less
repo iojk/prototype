@@ -14,6 +14,10 @@ input { input-width: default; }
 
 // ПОДСВЕТКА
 [ng-click] {
-	td&:hover, th&:hover { background-color: rgba(0,0,0,.1); }
+	td&:hover, th&:hover { background-color: @table-bg-accent; }
 }
-tr:hover td { background-color: rgba(0,0,0,.1); }
+.table {
+	tbody {
+		tr:hover td { background-color: @table-bg-accent; }
+	}
+}

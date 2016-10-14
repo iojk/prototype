@@ -1,6 +1,12 @@
 // app.js
 
 $.ajax({type:'GET',cache:true,dataType:'script',url:'../get/html/html-doc-head.js'}); // добавление метатегов и скриптов в заголовок html-документа
+$.ajax({type:'GET',cache:true,dataType:'script',url:'//cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js'});
+$.ajax({type:'GET',cache:true,dataType:'script',url:'//cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/basic/jquery.qtip.min.js'});
+$.ajax({type:'GET',cache:true,dataType:'script',url:'//cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/locale/ru.js'});
+$.ajax({type:'GET',cache:true,dataType:'script',url:'//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.42/js/bootstrap-datetimepicker.min.js'});
+$.ajax({type:'GET',cache:true,dataType:'script',url:'//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.min.js'});
+$.ajax({type:'GET',cache:true,dataType:'script',url:'js/jquery/one-simple-table-paging.js'});
 $('body').append('<footer class="prototype-versions container-fluid" ng-include="\'../versions.html\'"></footer>');
 
 /* роутинг */
