@@ -11,28 +11,41 @@
 		<p>Search Query: {{ searchCountry }}</p>
 	</div>
 
-	<form class="form-inline jq-formservice">
-		<div class="form-group">
-			<label class="input-group">
-				<div class="input-group-addon fa fa-search"></div>
-				<input class="form-control input-width-auto"
-				       type="text" placeholder="Search"
-				       ng-model="searchCountry">
-			</label>
-		</div>
-		<div class="form-group">
-			<label class="">
-				<span class="label-short text-left">Rows on page</span>
-				<input type="number" class="form-control number-width-auto" ng-model="rowsPerPage" style="width: 4em;">
-			</label>
-		</div>
-	</form>
-
 	<table class="table table-striped">
+		<caption>
+			<form class="form-inline jq-formservice">
+				<fieldset>
+					<div class="form-group">
+						<label class="input-group">
+							<div class="input-group-addon fa fa-search"></div>
+							<input class="form-control input-width-auto"
+							       type="text" placeholder="Search"
+							       ng-model="searchCountry">
+						</label>
+					</div>
+					<div class="form-group">
+						<label>
+							<span class="label-short text-left">Rows on page</span>
+							<input type="number" class="form-control number-width-auto" ng-model="rowsPerPage" style="width: 4em;">
+						</label>
+					</div>
+					<div class="form-check">
+						<label>
+							<input class="form-check-input" type="checkbox"
+							       ng-model="checkboxModel.tableSmallFont"
+							       ng-true-value="'small'"
+							       ng-false-value=null
+							>
+							Small font
+						</label>
+					</div>
+				</fieldset>
+			</form>
+		</caption>
 		<col>
 		<col width="70%">
 		<col width="30%">
-		<thead>
+		<thead class="{{checkboxModel.tableSmallFont}}">
 			<tr>
 				<th class="text-nowrap" ng-click="sortType = 'code'; sortReverse = !sortReverse">
 					<i class="fa {{ sortType == 'code' && sortReverse ? 'fa-caret-up' : 'fa-caret-down' }}"></i>
@@ -48,7 +61,7 @@
 				</th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody class="{{checkboxModel.tableSmallFont}}">
 			<!-- change from ng-repeat to dir-paginate attribute -->
 			<tr dir-paginate="
 			country in countries |
