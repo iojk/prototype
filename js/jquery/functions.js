@@ -35,6 +35,8 @@ function input_width_auto(
 		+letter_width // ширина моноширинного символа в REM
 		+' + '+padding_width // ширина внутреннего отступа в поле формы
 		+'*2 + "rem";');
+		var ph_width = $(this).attr('placeholder').length*0.9+'rem';
+		$(this).css({'width':ph_width,'min-width':ph_width});
 	});
 }
 
