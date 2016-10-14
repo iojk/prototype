@@ -1,6 +1,8 @@
 
 /* ЭЛЕМЕНТЫ ФОРМ */
 
+@check-width: 1.5rem;
+
 .label-short {
 	vertical-align: middle;
 	min-height: 2.25rem;
@@ -10,16 +12,16 @@
 	line-height: 1.15rem;
 	display: inline-block;
 	color: #000;
-	&.text-left { margin-right: @mark-padding; padding-right: 1.5rem; }
-	&.text-right { margin-left: @mark-padding; padding-left: 1.5rem; }
+	&.text-left { margin-right: @mark-padding; padding-right: @check-width; }
+	&.text-right { margin-left: @mark-padding; padding-left: @check-width; }
 }
 
 .label-box {
 	&.form-check {
 		.form-check-input {
-			margin-top: 0.8rem; width: 1.5rem;
-			&.pull-left { margin-right: -1.5rem; }
-            &.pull-right { margin-left: -1.5rem; }
+			margin-top: 0.8rem; width: @check-width;
+			&.pull-left { margin-right: -@check-width; }
+            &.pull-right { margin-left: -@check-width; }
 		}
 	}
 }
