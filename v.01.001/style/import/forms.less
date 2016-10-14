@@ -2,21 +2,24 @@
 /* ЭЛЕМЕНТЫ ФОРМ */
 
 .label-short {
-	line-height: 1.2rem;
-    padding-top: 0.5rem; margin-top: -1px;
-    &.text-leftl, &.text-right { overflow: hidden; }
+	vertical-align: middle;
+	min-height: 2.25rem;
+	border: 1px solid transparent;
+	box-sizing: padding-box;
+	padding-top: 0.55rem;
+	line-height: 1.15rem;
+	display: inline-block;
+	color: #000;
 	&.text-left { margin-right: @mark-padding; padding-right: 1.5rem; }
 	&.text-right { margin-left: @mark-padding; padding-left: 1.5rem; }
 }
 
-.label-box { vertical-align: middle;
+.label-box {
 	&.form-check {
 		.form-check-input {
-			height: 2.35rem; margin-top: 0; vertical-align: middle;
-			width: 1.5rem;
+			margin-top: 0.8rem; width: 1.5rem;
 			&.pull-left { margin-right: -1.5rem; }
             &.pull-right { margin-left: -1.5rem; }
-            .label-short { margin-right: 0; margin-left: 0; }
 		}
 	}
 }

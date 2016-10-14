@@ -5,32 +5,27 @@
 	<p>{{message}} {{paddingX}}</p>
 
 	<br>
-	<div class="alert alert-info">
-		<p>Sort Type: {{ sortType }}</p>
-		<p>Sort Reverse: {{ sortReverse }}</p>
-		<p>Search Query: {{ searchCountry }}</p>
-	</div>
 
 	<table class="table table-striped">
 		<caption>
-			<form class="form-inline jq-formservice">
-				<fieldset class="pull-right">
-					<div class="form-group">
-						<label class="label-box">
-							<span class="label-short">Rows on page</span>
-							<input type="number" class="form-control number-width-auto" ng-model="rowsPerPage" style="width: 4em;">
-						</label>
-					</div>
-					<div class="form-group">
-						<label class="label-box input-group pull-right">
+			<form class="row form-inline jq-formservice">
+				<fieldset class="pull-right col-md-6 row">
+					<div class="form-group pull-right">
+						<label class="label-box input-group pull-right col-md-12">
 							<div class="input-group-addon fa fa-search"></div>
 							<input class="form-control input-width-auto"
 							       type="text" placeholder="Search"
 							       ng-model="searchCountry">
 						</label>
 					</div>
+					<div class="form-group pull-right">
+						<label class="label-box pull-right">
+							<span class="label-short">Rows on page</span>
+							<input type="number" class="form-control number-width-auto" ng-model="rowsPerPage" style="width: 4em;">
+						</label>
+					</div>
 				</fieldset>
-				<fieldset class="pull-left col-md-5">
+				<fieldset class="pull-left col-md-6">
 					<div class="form-group">
 						<label class="label-box form-check">
 							<input class="form-check-input pull-left" type="checkbox"
@@ -39,6 +34,13 @@
 							       ng-false-value=null>
 							<div class="label-short text-right">Small font</div>
 						</label>
+					</div>
+					<div class="form-group">
+						<div class="label-box">
+							<div class="label-short text-right">
+								Sort by {{ sortType }}, Sort type: {{ sortReverse }}, Search Query: {{ searchCountry }}
+							</div>
+						</div>
 					</div>
 				</fieldset>
 			</form>
