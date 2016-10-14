@@ -1,6 +1,23 @@
 
 /* ЭЛЕМЕНТЫ ФОРМ */
 
-.label-short { display: inline-block;
-	&.text-left { margin-right: @mark-padding; }
+.label-short {
+	line-height: 1.2rem;
+    padding-top: 0.5rem; margin-top: -1px;
+    &.text-leftl, &.text-right { overflow: hidden; }
+	&.text-left { margin-right: @mark-padding; padding-right: 1.5rem; }
+	&.text-right { margin-left: @mark-padding; padding-left: 1.5rem; }
 }
+
+.label-box { vertical-align: middle;
+	&.form-check {
+		.form-check-input {
+			height: 2.35rem; margin-top: 0; vertical-align: middle;
+			width: 1.5rem;
+			&.pull-left { margin-right: -1.5rem; }
+            &.pull-right { margin-left: -1.5rem; }
+            .label-short { margin-right: 0; margin-left: 0; }
+		}
+	}
+}
+
