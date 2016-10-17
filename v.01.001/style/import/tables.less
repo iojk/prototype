@@ -1,24 +1,42 @@
 
 /* ЭЛЕМЕНТЫ ТАБЛИЦ */
 
-.th-content, .tв-content {
+.th-content, .td-content {
 	display: inline-block;
 }
 
 .table {
-	caption { caption-side: top;
-		.input-group {
-			border-spacing: 0; // устранение лишних зазоров
-		}
-	}
+	caption { caption-side: top; }
 	thead {
 		th { border-bottom-color: transparent; } // скрываем белую полосу
 	}
 	td, th {
+		position: relative;
 		border-top-color: transparent;
 		box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
 		&.text-right { text-align: right; }
 		&.text-left { text-align: left; }
+		&.col-sort, &.col-reverse {
+			.th-content:before {
+				font-family: FontAwesome; width: 1rem; text-align: center; display: inline-block;
+				content: "►"; color: @light-border-color;
+			}
+		}
+		&[data-active="active"].col-sort .th-content:before { content: "▲"; color: @link-color; } // вверх
+		&[data-active="active"].col-reverse .th-content:before { content: "▼"; color: @link-color; } // вниз
+	}
+	th.expandable {
+		&:after {
+			content: "\f068";
+			font-family: FontAwesome;
+			font-size: 1rem - 4*@font-shift;
+			padding: .1rem .3rem .1rem .2rem;
+			border: 1px solid @table-bg-hover;
+			display: inline-block;
+			color: @light-border-color;
+			cursor: default;
+			vertical-align: middle;
+		}
 	}
 	tfoot {
 		td, th { box-shadow: none; }

@@ -47,6 +47,7 @@ prototypeApp.controller('colorsController', function($scope) {
 prototypeApp.controller('tablesController', function($scope, $http) {
 	$scope.message = 'Grid Systems';
 	$http.get('../get/json/countries.json').success(function(listCountries) { $scope.countries = listCountries; });
+	$scope.sortActive = true;
 	$scope.sortType = 'code'; // set the default sort type
 	$scope.sortReverse = false; // set the default sort order
 	$scope.searchCountry = ''; // set the default search/filter term

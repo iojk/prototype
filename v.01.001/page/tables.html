@@ -38,7 +38,9 @@
 					<div class="form-group">
 						<div class="label-box">
 							<div class="label-short text-right">
-								Sort by {{ sortType }}, Sort type: {{ sortReverse }}, Search Query: {{ searchCountry }}
+								Sort by {{ sortType }},
+								Sort type: {{ sortReverse }},
+								Search Query: {{ searchCountry }}
 							</div>
 						</div>
 					</div>
@@ -47,17 +49,29 @@
 		</caption>
 		<thead class="{{checkboxModel.tableSmallFont}}">
 			<tr>
-				<th style="width: 0.1%" class="text-nowrap" ng-click="sortType = 'code'; sortReverse = !sortReverse">
-					<i class="fa {{ sortType == 'code' && sortReverse ? 'fa-caret-up' : 'fa-caret-down' }}"></i>
-					<div class="th-content">Код</div>
+				<th style="width: 0.1%" class="text-nowrap
+					{{ sortType === 'code' && sortReverse ? 'col-reverse':'col-sort' }}"
+				    data-active="{{ sortType === 'code' ? 'active':'' }}">
+					<div class="th-content"
+					     ng-click="sortType == 'code' ? sortReverse = !sortReverse : sortReverse = sortReverse ; sortType = 'code'">
+						Код
+					</div>
 				</th>
-				<th style="width: 70%" class="" ng-click="sortType = 'name'; sortReverse = !sortReverse">
-					<i class="fa {{ sortType == 'name' && sortReverse ? 'fa-caret-up' : 'fa-caret-down' }}"></i>
-					<div class="th-content">Страна</div>
+				<th style="width: 70%" class="expandable
+					{{ sortType === 'name' && sortReverse ? 'col-reverse':'col-sort' }}"
+				    data-active="{{ sortType === 'name' ? 'active':'' }}">
+					<div class="th-content"
+					     ng-click="sortType == 'name' ? sortReverse = !sortReverse : sortReverse = sortReverse ; sortType = 'name'">
+						Страна
+					</div>
 				</th>
-				<th style="width: 30%" class="text-right" ng-click="sortType = 'population'; sortReverse = !sortReverse">
-					<i class="fa {{ sortType == 'population' && sortReverse ? 'fa-caret-up' : 'fa-caret-down' }}"></i>
-					<div class="th-content">Население</div>
+				<th style="width: 30%" class="text-right expandable
+				    {{ sortType === 'population' && sortReverse ? 'col-reverse':'col-sort' }}"
+				    data-active="{{ sortType === 'population' ? 'active':'' }}">
+					<div class="th-content"
+					     ng-click="sortType == 'population' ? sortReverse = !sortReverse : sortReverse = sortReverse ; sortType = 'population'">
+						Население
+					</div>
 				</th>
 			</tr>
 		</thead>

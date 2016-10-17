@@ -1,5 +1,7 @@
 // Bootstrap Correct
 
+@border-color-bkg: rgba(0, 0, 0, 0.25);
+
 /* модальные окна */
 body { display: table; box-sizing: content-box; width: 100%; }
 body.container { display: block; width: auto; padding-left: 32px; padding-right: 32px; }
@@ -22,12 +24,14 @@ label {
 	&.row { display: block } // для обеспечения вертикального деления секций форм
 	&:hover .form-control  { border-color: @input-border-focus; } // подсветка контрола по наведению на его ярлык
 }
+.input-group {
+	.table caption & { border-spacing: 0; } // устранение лишних зазоров
+}
 .input-group-addon {
+	border-color: @border-color-bkg;
 	cursor: default; // для предотвращения мелькания курсора
 	&.fa { display: table-cell; } // чтобы иконки внутри кнопок не ломали контрол (наследование от .input-group-addon)
-	border-color: rgba(0, 0, 0, 0.25);
 }
-
 
 /* Jumbotron */
 .jumbotron { margin-bottom: 0; }

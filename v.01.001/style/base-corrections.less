@@ -1,26 +1,23 @@
 // Base Corrections
 
-@light-border-color: rgba(0,0,0,.3); // цвет рамки для светлых фонов
-@dark-border-color: rgba(255,255,255,.3);  // цвет рамки для темных фонов
-
 body { overflow-y: scroll; font-family: "Roboto", sans-serif; }
 a { text-decoration: underline; }
 
 input { input-width: default; }
 
 // КУРСОРЫ
-[ng-click], // дефолтный курсор кликабельных элементов
+[ng-click]  { cursor: pointer; } // дефолтный курсор кликабельных элементов
 [title] { cursor: default; } // для плагина тултипа, чтобы подпись всегда была под указателем-стрелкой
 
 // ПОДСВЕТКА
-[ng-click] {
-	td&:hover, th&:hover {
-		background-color: @table-bg-accent;
-		border-top-color: rgba(0, 0, 0, 0.2);
-		box-shadow: 1px 0 0 rgba(0, 0, 0, 0.2) inset, -1px 0 0 rgba(0, 0, 0, 0.2) inset;
-	}
-}
 .table {
+	thead {
+		td:hover, th:hover {
+        	background-color: @table-bg-accent;
+        	border-top-color: rgba(0, 0, 0, 0.2);
+        	box-shadow: 1px 0 0 rgba(0, 0, 0, 0.2) inset, -1px 0 0 rgba(0, 0, 0, 0.2) inset;
+        }
+	}
 	tbody {
 		tr:hover td { background-color: @table-bg-accent; }
 	}
