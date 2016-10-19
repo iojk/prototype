@@ -11,6 +11,10 @@ prototypeApp.directive('jq.tablepaging', function() {
 		rowsPerPage: 10
     } ); } };
 });
+/* скрытие колонок в таблицах */
+prototypeApp.directive('jq.tablecols', function() {
+    return { restrict: 'A', link: function() { table_cols('.jq-tablecols'); } };
+});
 prototypeApp.directive('jq.formservice', function() {
 	return { restrict: 'A', link: function() {
 		input_width_auto('onkeyup','.input-width-auto',0.62,0.75*2);

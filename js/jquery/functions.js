@@ -23,6 +23,33 @@ function click_indicator(
 	});
 }
 
+/* Скрытие столбцов таблицы */
+function table_cols(
+	tables
+) {
+	$(tables).each(function(){
+		var table = $(this);
+		var ths = table.find('thead th');
+		var numCells = ths.length;
+		table.find('thead th.expandable').find('.th-content').after('<div class="col-expand fa fa-minus"></div>');
+		ths.each(function(e){
+			var th = $(this);
+			var flag = true
+			th.find('.col-expand').click(function(){
+				if (flag) {
+					flag = false
+					th.addClass('width-min');
+					$(this).removeClass('fa-minus').addClass('fa-plus');
+				} else {
+					flag = true
+					th.removeClass('width-min');
+					$(this).removeClass('fa-plus').addClass('fa-minus')
+				}
+			});
+		});
+	});
+}
+
 /* Автоподбор ширины инпута */
 function input_width_auto(
 	ev,
@@ -39,5 +66,3 @@ function input_width_auto(
 		$(this).css({'width':ph_width,'min-width':ph_width});
 	});
 }
-
-

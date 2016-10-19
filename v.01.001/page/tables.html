@@ -6,7 +6,7 @@
 
 	<br>
 
-	<table class="table table-striped">
+	<table class="table table-striped jq-tablecols">
 		<caption>
 			<form class="row form-inline jq-formservice">
 				<fieldset class="pull-right col-md-6 row">
@@ -36,6 +36,15 @@
 						</label>
 					</div>
 					<div class="form-group">
+						<label class="label-box form-check">
+							<input class="form-check-input pull-left" type="checkbox"
+							       ng-model="checkboxModel.tableControls"
+							       ng-true-value="'table-controls'"
+							       ng-false-value=null>
+							<div class="label-short text-right">View controls</div>
+						</label>
+					</div>
+					<div class="form-group">
 						<div class="label-box">
 							<div class="label-short text-right">
 								Sort by {{ sortType }},
@@ -47,9 +56,9 @@
 				</fieldset>
 			</form>
 		</caption>
-		<thead class="{{checkboxModel.tableSmallFont}}">
+		<thead class="{{checkboxModel.tableSmallFont}} {{checkboxModel.tableControls}}">
 			<tr>
-				<th style="width: 0.1%" class="text-nowrap
+				<th class="text-nowrap width-min
 					{{ sortType === 'code' && sortReverse ? 'col-reverse':'col-sort' }}"
 				    data-active="{{ sortType === 'code' ? 'active':'' }}">
 					<div class="th-content"
@@ -75,7 +84,7 @@
 				</th>
 			</tr>
 		</thead>
-		<tbody class="{{checkboxModel.tableSmallFont}}">
+		<tbody class="{{checkboxModel.tableSmallFont}} {{checkboxModel.tableControls}}">
 			<!-- change from ng-repeat to dir-paginate attribute -->
 			<tr dir-paginate="
 			country in countries |

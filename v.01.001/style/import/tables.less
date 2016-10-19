@@ -8,7 +8,7 @@
 .table {
 	caption { caption-side: top; }
 	thead {
-		th { border-bottom-color: transparent; } // скрываем белую полосу
+		th { border-bottom-width: 0; } // скрываем белую полосу
 	}
 	td, th {
 		position: relative;
@@ -18,24 +18,26 @@
 		&.text-left { text-align: left; }
 		&.col-sort, &.col-reverse {
 			.th-content:before {
-				font-family: FontAwesome; width: 1rem; text-align: center; display: inline-block;
+				font-family: FontAwesome; width: 1rem; text-align: center; display: none;
 				content: "►"; color: @light-border-color;
+				margin-left: -0.2rem;
 			}
 		}
 		&[data-active="active"].col-sort .th-content:before { content: "▲"; color: @link-color; } // вверх
 		&[data-active="active"].col-reverse .th-content:before { content: "▼"; color: @link-color; } // вниз
 	}
 	th.expandable {
-		&:after {
-			content: "\f068";
-			font-family: FontAwesome;
+		.col-expand {
 			font-size: 1rem - 4*@font-shift;
-			padding: .1rem .3rem .1rem .2rem;
+			box-sizing: padding-box;
+			width: 1rem;
+			text-align: center;
+			padding: 0.3rem 0.1rem 0.2rem 0;
 			border: 1px solid @table-bg-hover;
-			display: inline-block;
 			color: @light-border-color;
 			cursor: default;
 			vertical-align: middle;
+			display: inline-block;
 		}
 	}
 	tfoot {
@@ -50,3 +52,7 @@
 	}
 }
 
+.table-controls {
+	th[data-active] .th-content:before,
+	th.expandable:after { display: inline-block; }
+}
