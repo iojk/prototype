@@ -25,25 +25,38 @@ function click_indicator(
 
 /* Скрытие столбцов таблицы */
 function table_cols(
-	tables
+	tables,
+	thExp,
+	colExp,
+	celCont,
+	celContMin
 ) {
 	$(tables).each(function(){
 		var table = $(this);
 		var ths = table.find('thead th');
 		var numCells = ths.length;
-		table.find('thead th.expandable').find('.th-content').after('<div class="col-expand fa fa-minus"></div>');
+		table.find('thead th'+thExp).find('.th-content').after('<div class="col-expand fa fa-minus"></div>');
 		ths.each(function(e){
 			var th = $(this);
+			var thw = th.find('.th-content').width()
+			 	+ th.find('.th-content:before').width()
+				+ th.find('.col-expand').width() + 30;
 			var flag = true
-			th.find('.col-expand').click(function(){
+			th.find(colExp).click(function(){
 				if (flag) {
 					flag = false
 					th.addClass('width-min');
 					$(this).removeClass('fa-minus').addClass('fa-plus');
+					table.find('tr').each(function(){
+						$(this).find('td').eq(e).find(celCont).addClass(celContMin).css('max-width',thw);
+					});
 				} else {
 					flag = true
 					th.removeClass('width-min');
-					$(this).removeClass('fa-plus').addClass('fa-minus')
+					$(this).removeClass('fa-plus').addClass('fa-minus');
+					table.find('tr').each(function(){
+						$(this).find('td').eq(e).find(celCont).removeClass(celContMin).css('max-width','100%');
+					});
 				}
 			});
 		});

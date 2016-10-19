@@ -91,9 +91,9 @@
 			orderBy: sortType: sortReverse |
 			filter: searchCountry |
 			itemsPerPage: rowsPerPage">
-				<td>{{country.code}}</td>
-				<td>{{country.name}}</td>
-				<td class="text-right text-num">{{country.population | number}}</td>
+				<td><div class="cell-content">{{country.code}}</div></td>
+				<td><div class="cell-content">{{country.name}}</div></td>
+				<td class="text-right text-num"><div class="cell-content">{{country.population | number}}</div></td>
 			</tr>
 		</tbody>
 		<tfoot>

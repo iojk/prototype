@@ -13,7 +13,13 @@ prototypeApp.directive('jq.tablepaging', function() {
 });
 /* скрытие колонок в таблицах */
 prototypeApp.directive('jq.tablecols', function() {
-    return { restrict: 'A', link: function() { table_cols('.jq-tablecols'); } };
+    return { restrict: 'A', link: function() { table_cols(
+    	'.jq-tablecols',
+    	'.expandable',
+    	'.col-expand',
+    	'.cell-content',
+    	'cell-content-min'
+    ); } };
 });
 prototypeApp.directive('jq.formservice', function() {
 	return { restrict: 'A', link: function() {

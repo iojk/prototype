@@ -39,6 +39,7 @@ label {
 /* Пажинация */
 .pagination { margin-left: auto; margin-right: auto; display: table; } // выравниваем блок пажинации по центру
 .page-link { border-color: @light-border-color; text-decoration: underline;
+	.page-item.active &, // снимаем подчеркивание со ссылки открытой страницы
 	.disabled & { text-decoration: none; }
 	.page-item &, .page-item &:focus, .page-item &:hover,
 	.page-item.disabled &, .page-item.disabled &:focus, .page-item.disabled &:hover,

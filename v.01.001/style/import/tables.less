@@ -27,6 +27,7 @@
 		&[data-active="active"].col-reverse .th-content:before { content: "▼"; color: @link-color; } // вниз
 	}
 	th.expandable {
+		white-space: nowrap;
 		.col-expand {
 			font-size: 1rem - 4*@font-shift;
 			box-sizing: padding-box;
@@ -37,7 +38,9 @@
 			color: @light-border-color;
 			cursor: default;
 			vertical-align: middle;
-			display: inline-block;
+			display: none;
+			margin-left: 0.2rem;
+
 		}
 	}
 	tfoot {
@@ -54,5 +57,10 @@
 
 .table-controls {
 	th[data-active] .th-content:before,
-	th.expandable:after { display: inline-block; }
+	th.expandable .col-expand { display: inline-block; }
+}
+
+.cell-content-min {
+	overflow: hidden; height: 1.5rem; text-overflow: "…"; white-space: nowrap;
+	&:hover { display: table; margin-right: -9999px; max-width: 100% !important; } // раскрытие свернутых ячеек по ховеру
 }
