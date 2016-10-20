@@ -16,31 +16,6 @@
 		box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
 		&.text-right { text-align: right; }
 		&.text-left { text-align: left; }
-		&.col-sort, &.col-reverse {
-			.th-content:before {
-				font-family: FontAwesome; width: 1rem; text-align: center; display: none;
-				content: "►"; color: @light-border-color;
-				margin-left: -0.2rem;
-			}
-		}
-		&[data-active="active"].col-sort .th-content:before { content: "▲"; color: @link-color; } // вверх
-		&[data-active="active"].col-reverse .th-content:before { content: "▼"; color: @link-color; } // вниз
-	}
-	th.expandable {
-		white-space: nowrap;
-		.col-expand {
-			font-size: 1rem - 4*@font-shift;
-			box-sizing: padding-box;
-			width: 1rem;
-			text-align: center;
-			padding: 0.3rem 0.1rem 0.2rem 0;
-			border: 1px solid @table-bg-hover;
-			color: @light-border-color;
-			cursor: default;
-			vertical-align: middle;
-			display: none;
-			margin-left: 0.2rem;
-		}
 	}
 	tfoot {
 		td, th { box-shadow: none; }
@@ -52,29 +27,4 @@
 			}
 		}
 	}
-}
-
-.table-controls {
-	th[data-active] .th-content:before,
-	th.expandable .col-expand { display: inline-block; }
-}
-
-.cell-content-min {
-	overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
-	.text-right & { float: right; }
-	&:active { overflow: visible; white-space: normal; cursor: default; .noselect; }
-	.text-right &:active {  }
-	&:after { // все ради только курсора, чтобы его показать точно в месте трех точек!
-		content: "";
-		cursor: pointer;
-		display: inline-block;
-		float: right;
-		height: 1.5rem;
-		margin-left: -1rem;
-		position: relative;
-		width: 1rem;
-		text-align: center;
-	}
-	&:active:after { right: 0; content: "\f048"; font-family: FontAwesome; opacity: 0.3; } // свернуть
-	.text-right &:active:after { right: 0; margin-left: 0; }
 }
