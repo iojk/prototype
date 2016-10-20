@@ -18,7 +18,9 @@ prototypeApp.directive('jq.tablecols', function() {
     	'.expandable',
     	'.col-expand',
     	'.cell-content',
-    	'cell-content-min'
+    	'cell-content-min',
+    	'развернуть колонку',
+    	'свернуть колонку'
     ); } };
 });
 prototypeApp.directive('jq.formservice', function() {

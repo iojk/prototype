@@ -4,7 +4,6 @@ $('head').prepend('\
 	<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"><!-- эта meta должна быть первой, иначе не сработает! -->\
 	<meta content="width=device-width, initial-scale=1.0" name="viewport"><!-- frontender.com.ua/mobile-web/wtf-viewport -->\
 	<meta content="true" name="HandheldFriendly"><!-- frontender.com.ua/mobile-web/useful-mobile-head-elements -->\
-	<meta charset="utf-8">\
 	<title>Prototype</title>\
 	<link rel="shortcut icon" href="../favicon.ico">\
 	<link rel="icon" href="../favicon.ico">\

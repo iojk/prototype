@@ -60,9 +60,22 @@
 }
 
 .cell-content-min {
-	overflow: hidden; text-overflow: "…"; white-space: nowrap; margin-right: -1em;
-	&:hover {
-		display: table; margin-right: -9999px; max-width: 100% !important;
-		background: black; color: white; position: relative; z-index: 1;
-	} // раскрытие свернутых ячеек по ховеру
+	overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+	.text-right & { float: right; }
+	&:active { overflow: auto; white-space: normal; cursor: default; .noselect; }
+	.text-right &:active {  }
+	&:after { // все ради только курсора, чтобы его показать точно в месте трех точек!
+		content: "";
+		cursor: pointer;
+		display: inline-block;
+		float: right;
+		height: 1.5rem;
+		margin-left: -1rem;
+		position: relative;
+		right: 0;
+		width: 1rem;
+		text-align: center;
+	}
+	&:active:after { margin-left: 1rem; content: "\f048"; font-family: FontAwesome; opacity: 0.3; } // свернуть
+	.text-right &:active:after { margin-left: 0; }
 }
