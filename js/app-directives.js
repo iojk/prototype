@@ -26,7 +26,9 @@ prototypeApp.directive('jq.tablecols', function() {
 prototypeApp.directive('jq.rowselect', function() {
     return { restrict: 'A', link: function() { row_select(
     	'thead .jq-rowselect input',
-    	'tbody .jq-rowselect input'
+    	'tbody .jq-rowselect input',
+    	'.jq-rowselect',
+    	'row-select'
     ); } };
 });
 prototypeApp.directive('jq.formservice', function() {
