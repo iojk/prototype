@@ -40,6 +40,15 @@
 					<div class="form-group">
 						<label class="label-box form-check">
 							<input class="form-check-input pull-left" type="checkbox"
+							       ng-model="checkboxModel.tableSmallPads"
+							       ng-true-value="'pad-min-v'"
+							       ng-false-value=null>
+							<div class="label-short text-right">Small Pads</div>
+						</label>
+					</div>
+					<div class="form-group">
+						<label class="label-box form-check">
+							<input class="form-check-input pull-left" type="checkbox"
 							       ng-model="checkboxModel.tableControls"
 							       ng-true-value="'table-controls'"
 							       ng-false-value="null">
@@ -58,7 +67,11 @@
 				</fieldset>
 			</form>
 		</caption>
-		<thead class="{{checkboxModel.tableSmallFont}} {{checkboxModel.tableControls}}">
+		<thead class="
+			{{checkboxModel.tableSmallFont}}
+			{{checkboxModel.tableSmallPads}}
+			{{checkboxModel.tableControls}}
+		">
 		<tr>
 			<th jq.rowselect class="text-nowrap width-min jq-rowselect">
 				<label class="th-content"><input type="checkbox"></label>
@@ -89,7 +102,11 @@
 			</th>
 		</tr>
 		</thead>
-		<tbody class="{{checkboxModel.tableSmallFont}} {{checkboxModel.tableControls}}">
+		<tbody class="
+			{{checkboxModel.tableSmallFont}}
+			{{checkboxModel.tableSmallPads}}
+			{{checkboxModel.tableControls}}
+		">
 		<!-- change from ng-repeat to dir-paginate attribute -->
 		<tr dir-paginate="
 			country in countries |

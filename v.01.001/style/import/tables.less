@@ -8,6 +8,13 @@
 .jq-rowselect { display: none; }
 .row-select td, .table tbody tr.row-select:hover td { background-color: @brand-primary; color: yellow; }
 
+.pad-min-v {
+	td, th {
+		padding-top: 0; padding-bottom: 0;
+		&.jq-rowselect label { padding-top: 0; padding-bottom: 0; }
+	}
+}
+
 .table {
 	caption { caption-side: top; }
 	thead {
