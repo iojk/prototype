@@ -23,6 +23,12 @@ prototypeApp.directive('jq.tablecols', function() {
     	'свернуть колонку'
     ); } };
 });
+prototypeApp.directive('jq.rowselect', function() {
+    return { restrict: 'A', link: function() { row_select(
+    	'thead .jq-rowselect input',
+    	'tbody .jq-rowselect input'
+    ); } };
+});
 prototypeApp.directive('jq.formservice', function() {
 	return { restrict: 'A', link: function() {
 		input_width_auto('onkeyup','.input-width-auto',0.62,0.75*2);

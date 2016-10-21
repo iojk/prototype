@@ -65,6 +65,24 @@ function table_cols(
 	});
 }
 
+function row_select(
+	selControl,
+	selChecks
+) {
+	$(selControl).each(function(){
+		var chek = true;
+		$(this).change(function(){
+			if (chek) {
+				chek = false;
+				$(this).closest('table').find(selChecks).prop({"checked":true});
+			} else {
+				chek = true;
+				$(this).closest('table').find(selChecks).prop({"checked":false});
+			}
+		});
+	});
+}
+
 /* Автоподбор ширины инпута */
 function input_width_auto(
 	ev,

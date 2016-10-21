@@ -6,7 +6,8 @@
 
 	<br>
 
-	<table class="table table-striped jq-tablecols">
+	<table jq.tablecols
+	       class="table table-striped jq-tablecols">
 		<caption>
 			<form class="row form-inline jq-formservice">
 				<fieldset class="pull-right col-md-6 row">
@@ -21,7 +22,8 @@
 					<div class="form-group pull-right">
 						<label class="label-box pull-right">
 							<span class="label-short">Rows on page</span>
-							<input type="number" class="form-control number-width-auto" ng-model="rowsPerPage" style="width: 4em;">
+							<input type="number" class="form-control number-width-auto" ng-model="rowsPerPage"
+							       style="width: 4em;">
 						</label>
 					</div>
 				</fieldset>
@@ -40,7 +42,7 @@
 							<input class="form-check-input pull-left" type="checkbox"
 							       ng-model="checkboxModel.tableControls"
 							       ng-true-value="'table-controls'"
-							       ng-false-value=null>
+							       ng-false-value="null">
 							<div class="label-short text-right">View controls</div>
 						</label>
 					</div>
@@ -57,55 +59,67 @@
 			</form>
 		</caption>
 		<thead class="{{checkboxModel.tableSmallFont}} {{checkboxModel.tableControls}}">
-			<tr>
-				<th class="text-nowrap width-min
+		<tr>
+			<th jq.rowselect class="text-nowrap width-min jq-rowselect">
+				<label class="th-content"><input type="checkbox"></label>
+			</th>
+			<th class="text-nowrap width-min
 					{{ sortType === 'code' && sortReverse ? 'col-reverse':'col-sort' }}"
-				    data-active="{{ sortType === 'code' ? 'active':'' }}">
-					<div class="th-content"
-					     ng-click="sortType == 'code' ? sortReverse = !sortReverse : sortReverse = sortReverse ; sortType = 'code'">
-						Код
-					</div>
-				</th>
-				<th style="width: 70%" class="expandable
+			    data-active="{{ sortType === 'code' ? 'active':'' }}">
+				<div class="th-content"
+				     ng-click="sortType == 'code' ? sortReverse = !sortReverse : sortReverse = sortReverse ; sortType = 'code'">
+					Код
+				</div>
+			</th>
+			<th style="width: 70%" class="expandable
 					{{ sortType === 'name' && sortReverse ? 'col-reverse':'col-sort' }}"
-				    data-active="{{ sortType === 'name' ? 'active':'' }}">
-					<div class="th-content"
-					     ng-click="sortType == 'name' ? sortReverse = !sortReverse : sortReverse = sortReverse ; sortType = 'name'">
-						Страна
-					</div>
-				</th>
-				<th style="width: 30%" class="text-right expandable
+			    data-active="{{ sortType === 'name' ? 'active':'' }}">
+				<div class="th-content"
+				     ng-click="sortType == 'name' ? sortReverse = !sortReverse : sortReverse = sortReverse ; sortType = 'name'">
+					Страна
+				</div>
+			</th>
+			<th style="width: 30%" class="text-right expandable
 				    {{ sortType === 'population' && sortReverse ? 'col-reverse':'col-sort' }}"
-				    data-active="{{ sortType === 'population' ? 'active':'' }}">
-					<div class="th-content"
-					     ng-click="sortType == 'population' ? sortReverse = !sortReverse : sortReverse = sortReverse ; sortType = 'population'">
-						Население
-					</div>
-				</th>
-			</tr>
+			    data-active="{{ sortType === 'population' ? 'active':'' }}">
+				<div class="th-content"
+				     ng-click="sortType == 'population' ? sortReverse = !sortReverse : sortReverse = sortReverse ; sortType = 'population'">
+					Население
+				</div>
+			</th>
+		</tr>
 		</thead>
 		<tbody class="{{checkboxModel.tableSmallFont}} {{checkboxModel.tableControls}}">
-			<!-- change from ng-repeat to dir-paginate attribute -->
-			<tr dir-paginate="
+		<!-- change from ng-repeat to dir-paginate attribute -->
+		<tr dir-paginate="
 			country in countries |
 			orderBy: sortType: sortReverse |
 			filter: searchCountry |
 			itemsPerPage: rowsPerPage">
-				<td><div class="cell-content">{{country.code}}</div></td>
-				<td><div class="cell-content">{{country.name}}</div></td>
-				<td class="text-right text-num"><div class="cell-content">{{country.population | number}}</div></td>
-			</tr>
+			<td jq.rowselect class="jq-rowselect">
+				<label class="cell-content"><input type="checkbox"></label>
+			</td>
+			<td>
+				<div class="cell-content">{{country.code}}</div>
+			</td>
+			<td>
+				<div class="cell-content">{{country.name}}</div>
+			</td>
+			<td class="text-right text-num">
+				<div class="cell-content">{{country.population | number}}</div>
+			</td>
+		</tr>
 		</tbody>
 		<tfoot>
-			<tr>
-				<td colspan="999">
-					<dir-pagination-controls
+		<tr>
+			<td colspan="999">
+				<dir-pagination-controls
 						boundary-links="true"
 						on-page-change="pageChangeHandler(newPageNumber)"
 						template-url="../get/tpl/dirPagination.tpl.html">
-					</dir-pagination-controls>
-				</td>
-			</tr>
+				</dir-pagination-controls>
+			</td>
+		</tr>
 		</tfoot>
 	</table>
 	<img class="jq-lazyload" data-original="../img/lazyload.png">
