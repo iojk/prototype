@@ -3,6 +3,8 @@
 
 @check-width: 1.5rem;
 
+[type="checkbox"], [type="radio"] { vertical-align: middle; }
+
 .label-short {
 	vertical-align: middle;
 	min-height: 2.25rem;
@@ -12,16 +14,14 @@
 	line-height: 1.15rem;
 	display: inline-block;
 	color: #000;
-	&.text-left { margin-right: @mark-padding; padding-right: @check-width; }
-	&.text-right { margin-left: @mark-padding; padding-left: @check-width; }
+	.form-check &.text-left { margin-left: -0.4rem; }
+	.form-check &.text-right { margin-right: -0.4rem; }
 }
 
-.label-box {
+.label-box { display: inline-block; vertical-align: middle;
 	&.form-check {
 		.form-check-input {
-			margin-top: 0.8rem; width: @check-width;
-			&.pull-left { margin-right: -@check-width; }
-            &.pull-right { margin-left: -@check-width; }
+			margin: 0.75rem;
 		}
 	}
 }

@@ -1,6 +1,8 @@
 
 /* ЭЛЕМЕНТЫ ТАБЛИЦ */
 
+caption { color: @body-color; }
+
 .th-content {
 	display: inline-block;
 }
@@ -39,3 +41,8 @@
 	}
 }
 
+caption.table-controls {
+	fieldset { display: none;
+		&.table-controls { display: inline-block; }
+	}
+}

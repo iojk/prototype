@@ -43,17 +43,21 @@ function table_cols(
 			var thw = th.find('.th-content').width()
 			 	+ th.find('.th-content:before').width()
 				+ th.find('.col-expand').width() + 30;
-			var flag = true
+			var flag = true;
+			th.closest('table').find('.col-checks').prepend(
+				'<label class="label-box form-check">'+
+					'<input class="form-check-input pull-left" type="checkbox">'+
+				'</label>');
 			th.find(colExp).click(function(){
 				if (flag) {
-					flag = false
+					flag = false;
 					th.addClass('width-min');
 					$(this).removeClass('fa-minus').addClass('fa-plus').attr('title',titlePlus);
 					table.find('tr').each(function(){
 						$(this).find('td').eq(e).find(celCont).addClass(celContMin).css('max-width',thw);
 					});
 				} else {
-					flag = true
+					flag = true;
 					th.removeClass('width-min');
 					$(this).removeClass('fa-plus').addClass('fa-minus').attr('title',titleMinus);
 					table.find('tr').each(function(){
@@ -62,9 +66,26 @@ function table_cols(
 				}
 			});
 		});
+		$('.col-checks .label-box.form-check').each(function(e){
+			var flag = true;
+			$(this).find('input').change(function(){
+				if (flag) {
+					flag = false
+					table.find('tr').each(function(){
+						$(this).find('td,th').eq(e).hide();
+					});
+				} else {
+					flag = true
+					table.find('tr').each(function(){
+						$(this).find('td,th').eq(e).show();
+					});
+				}
+			});
+		});
 	});
 }
 
+// выбор строк таблицы
 function row_select(
 	selControl,
 	selChecks,

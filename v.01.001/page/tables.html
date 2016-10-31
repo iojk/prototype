@@ -2,15 +2,12 @@
 
 <div class="jumbotron">
 	<h1>Tables</h1>
-	<p>{{message}} {{paddingX}}</p>
-
-	<br>
-
+	<p>{{message}}</p>
 	<table jq.tablecols
 	       class="table table-striped jq-tablecols">
-		<caption>
+		<caption class="table-controls">
 			<form class="row form-inline jq-formservice">
-				<fieldset class="pull-right col-md-6 row">
+				<fieldset class="pull-right col-md-6 row table-controls">
 					<div class="form-group pull-right">
 						<label class="label-box input-group pull-right col-md-12">
 							<div class="input-group-addon fa fa-search"></div>
@@ -27,44 +24,37 @@
 						</label>
 					</div>
 				</fieldset>
-				<fieldset class="pull-left col-md-6">
-					<div class="form-group">
-						<label class="label-box form-check">
-							<input class="form-check-input pull-left" type="checkbox"
-							       ng-model="checkboxModel.tableSmallFont"
-							       ng-true-value="'small'"
-							       ng-false-value=null>
-							<div class="label-short text-right">Small font</div>
-						</label>
-					</div>
-					<div class="form-group">
-						<label class="label-box form-check">
-							<input class="form-check-input pull-left" type="checkbox"
-							       ng-model="checkboxModel.tableSmallPads"
-							       ng-true-value="'pad-min-v'"
-							       ng-false-value=null>
-							<div class="label-short text-right">Small Pads</div>
-						</label>
-					</div>
+				<fieldset class="pull-left col-md-3 table-controls">
 					<div class="form-group">
 						<label class="label-box form-check">
 							<input class="form-check-input pull-left" type="checkbox"
 							       ng-model="checkboxModel.tableControls"
 							       ng-true-value="'table-controls'"
 							       ng-false-value="null">
-							<div class="label-short text-right">View controls</div>
+							<div class="label-short text-left">Add controls</div>
 						</label>
 					</div>
+				</fieldset>
+				<fieldset class="pull-left col-md-3 {{checkboxModel.tableControls}}">
 					<div class="form-group">
-						<div class="label-box">
-							<div class="label-short text-right">
-								Sort by {{ sortType }},
-								Sort type: {{ sortReverse }},
-								Search Query: {{ searchCountry }}
-							</div>
-						</div>
+						<div class="label-box">Small</div>
+						<label class="label-box form-check">
+							<input class="form-check-input pull-left" type="checkbox"
+							       ng-model="checkboxModel.tableSmallFont"
+							       ng-true-value="'small'"
+							       ng-false-value=null>
+							<div class="label-short text-left"> font</div>
+						</label>
+						<label class="label-box form-check">
+							<input class="form-check-input pull-left" type="checkbox"
+							       ng-model="checkboxModel.tableSmallPads"
+							       ng-true-value="'pad-min-v'"
+							       ng-false-value=null>
+							<div class="label-short text-left"> pads</div>
+						</label>
 					</div>
 				</fieldset>
+				<fieldset class="pull-left col-md-12 {{checkboxModel.tableControls}} col-checks"> hide cols</fieldset>
 			</form>
 		</caption>
 		<thead class="
