@@ -47,7 +47,7 @@ function table_cols(
 				+ th.find('.col-expand').width() + 30;
 			var flag = true;
 			th.closest('table').find('.col-checks').prepend(
-				'<label class="label-box form-check">'+
+				'<label class="label-box form-check" title="скрыть столбец">'+
 					'<input class="form-check-input pull-left" type="checkbox">'+
 				'</label>');
 			th.find(colExp).click(function(){
@@ -70,6 +70,13 @@ function table_cols(
 		});
 		$('.col-checks .label-box.form-check').each(function(e){
 			var flag = true;
+			$(this).hover(function(){
+				$('.table-col-n-'+ti+' thead tr th:nth-child('+(e+1)+')').addClass('jq-hover-col');
+				$('.table-col-n-'+ti+' tbody tr td:nth-child('+(e+1)+')').addClass('jq-hover-col');
+			},function(){
+				$('.table-col-n-'+ti+' thead tr th:nth-child('+(e+1)+')').removeClass('jq-hover-col');
+				$('.table-col-n-'+ti+' tbody tr td:nth-child('+(e+1)+')').removeClass('jq-hover-col');
+			});
 			$(this).find('input').change(function(){
 				if (flag) {
 					flag = false;
@@ -77,9 +84,11 @@ function table_cols(
 					'.table-col-n-'+ti+' thead tr th:nth-child('+(e+1)+') { display: none; }'+
 					'.table-col-n-'+ti+' tbody tr td:nth-child('+(e+1)+') { display: none; }'+
 					'</style>');
+					$('.table-col-n-'+ti+' caption .col-checks label:nth-child('+(e+1)+')').attr('title','показать столбец');
 				} else {
 					flag = true;
 					$('.table-col-n-'+ti+' style.col-nun-'+e).remove();
+					$('.table-col-n-'+ti+' caption .col-checks label:nth-child('+(e+1)+')').attr('title','скрыть столбец');
 				}
 			});
 		});
