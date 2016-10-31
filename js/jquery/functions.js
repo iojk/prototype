@@ -33,11 +33,13 @@ function table_cols(
 	titlePlus,
 	titleMinus
 ) {
-	$(tables).each(function(){
+	$(tables).each(function(ti){
 		var table = $(this);
 		var ths = table.find('thead th');
 		var numCells = ths.length;
-		table.find('thead th'+thExp).find('.th-content').after('<div class="col-expand fa fa-minus" title="'+titleMinus+'"></div>');
+		table.addClass('table-col-n-'+ti)
+			.find('thead th'+thExp).find('.th-content')
+			.after('<div class="col-expand fa fa-minus" title="'+titleMinus+'"></div>');
 		ths.each(function(e){
 			var th = $(this);
 			var thw = th.find('.th-content').width()
@@ -70,15 +72,14 @@ function table_cols(
 			var flag = true;
 			$(this).find('input').change(function(){
 				if (flag) {
-					flag = false
-					table.find('tr').each(function(){
-						$(this).find('td,th').eq(e).hide();
-					});
+					flag = false;
+					$('.table-col-n-'+ti).find('caption').append('<style class="col-nun-'+e+'">'+
+					'.table-col-n-'+ti+' thead tr th:nth-child('+(e+1)+') { display: none; }'+
+					'.table-col-n-'+ti+' tbody tr td:nth-child('+(e+1)+') { display: none; }'+
+					'</style>');
 				} else {
-					flag = true
-					table.find('tr').each(function(){
-						$(this).find('td,th').eq(e).show();
-					});
+					flag = true;
+					$('.table-col-n-'+ti+' style.col-nun-'+e).remove();
 				}
 			});
 		});
