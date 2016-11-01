@@ -25,70 +25,81 @@ function click_indicator(
 
 /* Скрытие столбцов таблицы */
 function table_cols(
-	tables,
-	thExp,
-	colExp,
-	celCont,
-	celContMin,
-	titlePlus,
-	titleMinus
+	tables, // селектор для таблиц, с регулировкой колонок
+	tableNum, // префикс класса для нумерации таблиц
+	thWrapIn, // селектор внутренней обертки заголовка колонки, сожержащий текст
+	thExp, // селектор - признак заголовка сворачиваемой колонки
+	colExp, // класс кнопки разворачивания свернутой ячейки
+	celCont, // селектор содержимого для текста в ячейке
+	celContMin, // модификатор установки свернутого состояния блока внутри ячейки
+	titlePlus, // подсказка для кнопки свернутого состояния колонки
+	titleMinus, // подсказка для кнопки развернутого состояния колонки
+	sMin, // класс символа из FontAwesome для индикации свернутого заголовка
+	sMax, // класс символа из FontAwesome для индикации развернутого заголовка
+	checkHideColWrap, // селектор контейнера чекбоксов для выборочного скрытия колонок
+	hideCol, // класс для индикации ячейки скрываемой колонки
+	titleColHide, // подсказка по ховеру для скрытого столбца
+	titleColShow // подсказка по ховеру для видимого столбца
 ) {
 	$(tables).each(function(ti){
 		var table = $(this);
 		var ths = table.find('thead th');
 		var numCells = ths.length;
-		table.addClass('table-col-n-'+ti)
-			.find('thead th'+thExp).find('.th-content')
-			.after('<div class="col-expand fa fa-minus" title="'+titleMinus+'"></div>');
+		table.addClass(tableNum+ti)
+			.find('thead th'+thExp).find(thWrapIn)
+			.after('<div class="'+colExp+' fa '+sMin+'" title="'+titleMinus+'"></div>');
 		ths.each(function(e){
 			var th = $(this);
-			var thw = th.find('.th-content').width()
-			 	+ th.find('.th-content:before').width()
-				+ th.find('.col-expand').width() + 30;
+			var thw = th.find(thWrapIn).width()
+			 	+ th.find(thWrapIn+':before').width()
+				+ th.find('.'+colExp).width() + 30;
 			var flag = true;
-			th.closest('table').find('.col-checks').prepend(
-				'<label class="label-box form-check" title="скрыть столбец">'+
+			th.closest('table').find(checkHideColWrap).prepend(
+				'<label class="label-box form-check">'+
 					'<input class="form-check-input pull-left" type="checkbox">'+
 				'</label>');
-			th.find(colExp).click(function(){
+			th.find('.'+colExp).click(function(){
 				if (flag) {
 					flag = false;
 					th.addClass('width-min');
-					$(this).removeClass('fa-minus').addClass('fa-plus').attr('title',titlePlus);
+					$(this).removeClass(sMin).addClass(sMax).attr('title',titlePlus);
 					table.find('tr').each(function(){
 						$(this).find('td').eq(e).find(celCont).addClass(celContMin).css('max-width',thw);
 					});
 				} else {
 					flag = true;
 					th.removeClass('width-min');
-					$(this).removeClass('fa-plus').addClass('fa-minus').attr('title',titleMinus);
+					$(this).removeClass(sMax).addClass(sMin).attr('title',titleMinus);
 					table.find('tr').each(function(){
 						$(this).find('td').eq(e).find(celCont).removeClass(celContMin).css('max-width','100%');
 					});
 				}
 			});
 		});
-		$('.col-checks .label-box.form-check').each(function(e){
+		$(checkHideColWrap+' .label-box.form-check').each(function(e){
+			var label = $(this);
 			var flag = true;
-			$(this).hover(function(){
-				$('.table-col-n-'+ti+' thead tr th:nth-child('+(e+1)+')').addClass('jq-hover-col');
-				$('.table-col-n-'+ti+' tbody tr td:nth-child('+(e+1)+')').addClass('jq-hover-col');
-			},function(){
-				$('.table-col-n-'+ti+' thead tr th:nth-child('+(e+1)+')').removeClass('jq-hover-col');
-				$('.table-col-n-'+ti+' tbody tr td:nth-child('+(e+1)+')').removeClass('jq-hover-col');
-			});
-			$(this).find('input').change(function(){
+			var th = '.'+tableNum+ti+' thead tr th:nth-child('+(e+1)+')';
+			var td = '.'+tableNum+ti+' tbody tr td:nth-child('+(e+1)+')';
+			var thText = $(th).find('.th-content').text().replace(/\s+/g,' ');
+			label.attr('title',titleColShow+thText);
+			label.hover(
+				function(){ $(th).addClass(hideCol); $(td).addClass(hideCol); },
+				function(){ $(th).removeClass(hideCol); $(td).removeClass(hideCol); }
+			);
+			label.find('input').change(function(){
 				if (flag) {
 					flag = false;
-					$('.table-col-n-'+ti).find('caption').append('<style class="col-nun-'+e+'">'+
-					'.table-col-n-'+ti+' thead tr th:nth-child('+(e+1)+') { display: none; }'+
-					'.table-col-n-'+ti+' tbody tr td:nth-child('+(e+1)+') { display: none; }'+
-					'</style>');
-					$('.table-col-n-'+ti+' caption .col-checks label:nth-child('+(e+1)+')').attr('title','показать столбец');
+					$('.'+tableNum+ti).find('caption').append('<style class="col-num-'+e+'">'+
+					th + ' { width: 0.01% !important; padding-left: 0 !important; padding-right: 0 !important; }' +
+					th + ' * { display: none!important; }' +
+					td + ' { width: 0.01% !important; padding-left: 0 !important; padding-right: 0 !important; }' +
+					td + ' * { display: none!important; } </style>');
+					label.attr('title',titleColHide+thText);
 				} else {
 					flag = true;
-					$('.table-col-n-'+ti+' style.col-nun-'+e).remove();
-					$('.table-col-n-'+ti+' caption .col-checks label:nth-child('+(e+1)+')').attr('title','скрыть столбец');
+					$('.'+tableNum+ti+' style.col-num-'+e).remove();
+					label.attr('title',titleColShow+thText);
 				}
 			});
 		});
