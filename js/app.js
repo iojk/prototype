@@ -16,6 +16,7 @@ prototypeApp.config(['$routeProvider', '$locationProvider',
 		$routeProvider
 			.when('/', { templateUrl: 'page/home.html', controller: 'mainController' })
 			.when('/about', { templateUrl: 'page/about.html', controller: 'aboutController' })
+			.when('/buttons', { templateUrl: 'page/buttons.html', controller: 'buttonsController' })
 			.when('/contact', { templateUrl: 'page/contact.html', controller: 'contactController' })
 			.when('/icons', { templateUrl: 'page/icons.html', controller: 'iconsController' })
 			.when('/forms', { templateUrl: 'page/forms.html', controller: 'formsController' })
@@ -31,6 +32,9 @@ prototypeApp.controller('mainController', function($scope, $http) {
 });
 prototypeApp.controller('aboutController', function($scope) {
 	$scope.message = 'Look! I am an about page.';
+});
+prototypeApp.controller('buttonsController', function($scope) {
+	$scope.message = 'Кнопки';
 });
 prototypeApp.controller('contactController', function($scope) {
 	$scope.message = 'Contact us! JK. This is just a demo.';

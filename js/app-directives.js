@@ -4,6 +4,10 @@
 prototypeApp.directive('jq.indicator', function() {
     return { restrict: 'A', link: function() { click_indicator('.jq-indicator','active'); } };
 });
+/* распознавание и оформление текстовых ссылок в документе */
+prototypeApp.directive('jq.textlink', function() {
+    return { restrict: 'A', link: function() { window.onload = plain_to_link('.jq-textlink'); } };
+});
 /* пейджинг таблиц */
 prototypeApp.directive('jq.tablepaging', function() {
     return { restrict: 'A', link: function() { $('.jq-tablepaging').oneSimpleTablePagination( {
