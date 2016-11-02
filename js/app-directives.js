@@ -18,6 +18,7 @@ prototypeApp.directive('jq.tablepaging', function() {
 /* валидация форм */
 prototypeApp.directive('jq.validate', function() {
     return { restrict: 'A', link: function() { $.validate( {
+    	lang : 'ru'
     } ); } };
 });
 /* скрытие колонок в таблицах */
