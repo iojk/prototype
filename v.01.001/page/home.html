@@ -3,13 +3,22 @@
 <div class="jumbotron">
 	<h1>Home Page</h1>
 	<p>{{message}}</p>
-	<select id="countries" class="form-control">
-		<option disabled>Выберите страну</option>
-	</select>
+	<form class="form-inline">
+		<div class="form-group">
+			Страна:
+			<select jq.select2 id="countries" class="form-control jq-select2"
+			        placeholder="Выберите страну"
+			        data-placeholder="Выберите страну">
+				<option disabled>Выберите страну</option>
+			</select>
+			<select class="form-control" placeholder="Выберите страну">
+				<option>Выберите страну</option>
+			</select>
+		</div>
+	</form>
 	<br>
 	<img src="http://www.tapasitsolutions.com/images/technologies/angularLogo.png" alt="angularjs">
 </div>
-
 
 <script type="text/javascript">
 	$.getJSON('../get/json/countries.json', function(data) {

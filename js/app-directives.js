@@ -54,6 +54,12 @@ prototypeApp.directive('jq.formservice', function() {
 prototypeApp.directive('jq.lazyload', function() {
     return { restrict: 'A', link: function() { $('.jq-lazyload').lazyload( { effect: 'fadeIn', event: 'scroll' } ); } };
 });
+/* select2 */
+prototypeApp.directive('jq.select2', function() {
+    return { restrict: 'A', link: function() { $('.jq-select2').select2( {
+    	maximumSelectionLength: 2
+    } ); } };
+});
 /* тултипы qtip2.com */
 prototypeApp.directive('jq.qtip', function() {
     return { restrict: 'A', link: function() { $('[title!=""]').qtip( {
