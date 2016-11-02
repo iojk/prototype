@@ -9,6 +9,22 @@ a { text-decoration: underline;
 	}
 }
 
+img { position: relative;
+	&:after { // стиль для битых картинок
+		content: "\f1c5" " " attr(alt);
+		color: @navbar-dark-color;
+		background-color: @body-color;
+		font-family: FontAwesome;
+		position: absolute;
+		top: 0; left: 0;
+		white-space: nowrap;
+		z-index: 1;
+		padding: 0 .3em;
+		white-space: nowrap;
+		border-radius: 3px;
+		cursor: default;
+	}
+}
 
 input { input-width: default; }
 
