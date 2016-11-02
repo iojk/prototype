@@ -15,6 +15,11 @@ prototypeApp.directive('jq.tablepaging', function() {
 		rowsPerPage: 10
     } ); } };
 });
+/* валидация форм */
+prototypeApp.directive('jq.validate', function() {
+    return { restrict: 'A', link: function() { $.validate( {
+    } ); } };
+});
 /* скрытие колонок в таблицах */
 prototypeApp.directive('jq.tablecols', function() {
     return { restrict: 'A', link: function() { table_cols(

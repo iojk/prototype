@@ -7,6 +7,7 @@ $.ajax({type:'GET',cache:true,dataType:'script',url:'//cdnjs.cloudflare.com/ajax
 $.ajax({type:'GET',cache:true,dataType:'script',url:'//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.42/js/bootstrap-datetimepicker.min.js'});
 $.ajax({type:'GET',cache:true,dataType:'script',url:'//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.full.min.js'});
 $.ajax({type:'GET',cache:true,dataType:'script',url:'//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/i18n/ru.js'});
+$.ajax({type:'GET',cache:true,dataType:'script',url:'//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js'});
 $.ajax({type:'GET',cache:true,dataType:'script',url:'//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.min.js'});
 $.ajax({type:'GET',cache:true,dataType:'script',url:'js/jquery/one-simple-table-paging.js'});
 $('body').append('<footer class="prototype-versions container-fluid" ng-include="\'../versions.html\'"></footer>');

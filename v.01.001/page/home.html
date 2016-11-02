@@ -6,13 +6,13 @@
 	<form class="form-inline">
 		<div class="form-group">
 			Страна:
-			<select jq.select2 id="countries" class="form-control jq-select2"
+			<select id="countries" class="form-control" placeholder="Выберите страну">
+				<option>Выберите страну</option>
+			</select>
+			<select jq.select2 id="countries2" class="form-control jq-select2"
 			        placeholder="Выберите страну"
 			        data-placeholder="Выберите страну">
 				<option disabled>Выберите страну</option>
-			</select>
-			<select class="form-control" placeholder="Выберите страну">
-				<option>Выберите страну</option>
 			</select>
 		</div>
 	</form>
@@ -24,6 +24,7 @@
 	$.getJSON('../get/json/countries.json', function(data) {
 		for(var i=0; i<data.length; i++) {
 			$('#countries').append('<option value="' + i + '">' + data[i].name + '</option>');
+			$('#countries2').append('<option value="' + i + '">' + data[i].name + '</option>');
 		}
 	}); // подгрузка json-модели к выпадающему списку
 </script>

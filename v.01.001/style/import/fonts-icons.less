@@ -5,7 +5,6 @@
 
 .text-num,
 .select2-selection__rendered, // select2
-//.select2-results__option, // select2
 .select2-results__option, // select2
 .form-control { font-family: 'Roboto Mono', monospace; }
 
@@ -16,6 +15,7 @@
 	margin-top: -1*@font-shift; // вертикальное выравнивание иконок в строке
 	th&, td& { display: table-cell; }
 	th&.fa-caret-down:before, th&.fa-caret-up:before { margin-left: -.2rem; }
+	i&+span { padding-left: 0.3em; } // для кнопок и ссылок с иконками
 }
 /* маленькие индикаторы для элементов раскрытия секций */
 [data-toggle="collapse"]:before { content: "\f196"; font-family: FontAwesome; font-size: 1rem + 0.7*@font-shift; line-height: 0; opacity: 0.5; }
@@ -25,8 +25,7 @@
 .fa {
 	.nav-link { text-decoration: underline; }
 	&.input-group-addon { line-height: 0; }
-	&.fa-table { font-size: 1rem + 5*@font-shift; margin-top: -5*@font-shift; } // маска для корректировки резкозти иконок
-	&.fa-search { font-size: 1rem + 2.5*@font-shift; margin-top: -2.5*@font-shift; }
+	&.fa-search { font-size: 1rem + 2.5*@font-shift; margin-top: -2.5*@font-shift; } // маска для корректировки резкозти иконок
 }
 
 /* замена аналогов glyphicon на FontAwesome */
