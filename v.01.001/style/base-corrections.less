@@ -1,7 +1,14 @@
 // Base Corrections
 
 body { overflow-y: scroll; font-family: "Roboto", sans-serif; }
-a { text-decoration: underline; }
+a { text-decoration: underline;
+	&[target="_blank"]:after { // внешние ссылки
+		content: "\f08e";  // .fa-external-link
+		font-family: "FontAwesome"; font-size: 0.9rem;
+		color: @body-color;
+	}
+}
+
 
 input { input-width: default; }
 
