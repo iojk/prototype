@@ -27,8 +27,17 @@
 }
 
 .col-form-label {
-    margin-bottom: -2px; // чтобы лабелы не вылезали по вертикали
     &:empty:after {
     	content: " "; // для контроля высоты пустых лабелов
     }
 }
+
+.col-form-controls {
+	position: relative;
+}
+
+.col-form-controls .form-check-input:only-child {
+	margin-top: -0.1rem; position: relative; // ликвидация вертикального сдвига чекбоксов
+}
+
+

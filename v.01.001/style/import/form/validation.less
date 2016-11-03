@@ -2,10 +2,17 @@
 /* jQuery - ВАЛИДАЦИЯ */
 
 .help-block {
-	color: @brand-danger;
+	.form-group [class*="col-"] + & {
+		display: inline-block;
+        padding: 0 15px;
+	}
 }
 
-.form-group [class*="col-"] + .help-block {
-	display: inline-block;
-	padding: 0 15px;
+[data-bv-result="INVALID"] { color: @brand-danger; }
+[data-bv-result="VALID"] { color: @brand-success; }
+
+.form-control-feedback {
+	&.fa-exclamation-circle { color: @brand-danger; }
+	&.fa-check-circle { color: @brand-success; }
+	position: absolute; left: 13px; top: -0.2rem;
 }

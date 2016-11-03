@@ -15,10 +15,17 @@ prototypeApp.directive('jq.tablepaging', function() {
 		rowsPerPage: 10
     } ); } };
 });
-/* валидация форм */
+/* валидация форм data-bv-validator=""
+	formvalidation.io/examples
+	bv.doc.javake.cn/examples
+*/
 prototypeApp.directive('jq.validate', function() {
-    return { restrict: 'A', link: function() { $.validate( {
-    	lang : 'ru'
+    return { restrict: 'A', link: function() { $('form').bootstrapValidator( {
+		feedbackIcons: {
+			valid: 'fa fa-check-circle',
+			invalid: 'fa fa-exclamation-circle',
+			validating: 'fa fa-repeat'
+		}
     } ); } };
 });
 /* скрытие колонок в таблицах */

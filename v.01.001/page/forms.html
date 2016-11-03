@@ -1,18 +1,22 @@
 <script async src="../js/app-pages.js"></script>
 
+
+
 <div jq.validate class="jumbotron">
 	<h1>Forms Collections</h1>
 	<p>{{message}}</p>
 	<a href="http://v4-alpha.getbootstrap.com/components/forms/">v4-alpha.getbootstrap.com/components/forms</a>
+
 	<form class="form-inline">
 		<h4>Инлайн-форма</h4>
-		<div class="form-group">
-			<label for="exampleInputName2">Name</label>
-			<input type="text" class="form-control" id="exampleInputName2"
-			       data-validation="length alphanumeric"
-			       data-validation-length="min4"
-			       placeholder="Jane Doe">
-		</div>
+		<label class="form-group">
+			<div class="col-form-label">Name</div>
+			<div class="input-group">
+				<input type="text" class="form-control" name="username" placeholder="Jane Doe">
+			</div>
+		</label>
+
+
 		<div class="form-group">
 			<label for="exampleInputEmail2">Email</label>
 			<input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
@@ -32,153 +36,166 @@
 		<button type="submit" class="btn btn-primary">Transfer cash</button>
 	</form>
 	<br>
+
 	<form>
 		<h4>Блочная форма</h4>
-		<fieldset>
-			<label class="row control-group">
-				<span class="col-md-2 col-form-label">Text</span>
-				<div class="col-md-10 controls form-group">
-					<div class="input-group">
-						<input class="form-control" type="text"
-						       data-validation="length alphanumeric"
-						       data-validation-length="min12"
-						       value="Artisanal kale" id="example-text-input">
-					</div>
-				</div>
-			</label>
-			<div class="form-group row">
-				<span class="col-xs-2 col-form-label">Text</span>
-				<div class="input-group col-xs-10">
-					<p class="form-control-static">просто статичный текст</p>
+		<label class="row form-group">
+			<div class="col-sm-12 col-md-5 col-lg-2 col-form-label">Email</div>
+			<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
+				<div class="input-group">
+					<input required type="email" name="email" class="form-control"
+					       placeholder="Email">
 				</div>
 			</div>
-			<fieldset class="form-group row">
-				<label for="example-search-input" class="col-xs-2 col-form-label">Search</label>
-				<div class="col-xs-10">
-					<input class="form-control" type="search" value="How do I shoot web" id="example-search-input">
-				</div>
-			</fieldset>
-			<div class="form-group row">
-				<label for="example-email-input" class="col-xs-2 col-form-label">Email</label>
-				<div class="col-xs-10">
-					<input class="form-control" type="email" value="bootstrap@example.com" id="example-email-input">
+		</label>
+		<!-- TODO добавить простой генератор и вставлять значение в placeholder -->
+		<label class="row form-group">
+			<div class="col-sm-12 col-md-5 col-lg-2 col-form-label">Password</div>
+			<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
+				<div class="input-group">
+					<input required type="password" name="password" class="form-control"
+					       minlength="6" maxlength="30" placeholder="Password">
 				</div>
 			</div>
-			<div class="form-group row">
-				<label for="example-url-input" class="col-xs-2 col-form-label">URL</label>
-				<div class="col-xs-10">
-					<input class="form-control" type="url" value="http://getbootstrap.com" id="example-url-input">
+		</label>
+		<label class="row form-group">
+			<div class="col-sm-12 col-md-5 col-lg-2 col-form-label">Username</div>
+			<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
+				<div class="input-group">
+					<input required type="text" name="username" class="form-control"
+					       pattern="^[a-zA-Z0-9_]+$" minlength="6" maxlength="30">
 				</div>
 			</div>
-			<div class="form-group row">
-				<label for="example-tel-input" class="col-xs-2 col-form-label">Telephone</label>
-				<div class="col-xs-10">
-					<input class="form-control" type="tel" value="1-(555)-555-5555" id="example-tel-input">
+		</label>
+		<label class="row form-group">
+			<div class="col-sm-12 col-md-5 col-lg-2 col-form-label">Search</div>
+			<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
+				<div class="input-group">
+					<input required type="search" name="search" class="form-control"
+					       placeholder="Search" pattern="^[a-zA-Z0-9_]+$" minlength="2">
 				</div>
 			</div>
-			<div class="form-group row">
-				<label for="example-password-input" class="col-xs-2 col-form-label">Password</label>
-				<div class="col-xs-10">
-					<input class="form-control" type="password" value="hunter2" id="example-password-input">
+		</label>
+		<label class="row form-group">
+			<div class="col-sm-12 col-md-5 col-lg-2 col-form-label">URL</div>
+			<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
+				<div class="input-group">
+					<input required type="url" name="url" class="form-control"
+					       placeholder="http://getbootstrap.com" minlength="2">
 				</div>
 			</div>
-			<div class="form-group row">
-				<label for="example-number-input" class="col-xs-2 col-form-label">Number</label>
-				<div class="col-xs-10">
-					<input class="form-control" type="number" value="42" id="example-number-input">
+		</label>
+		<label class="row form-group">
+			<div class="col-sm-12 col-md-5 col-lg-2 col-form-label">Telephone</div>
+			<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
+				<div class="input-group">
+					<input required type="tel" name="tel" class="form-control"
+					       placeholder="1-(555)-555-5555" minlength="2">
 				</div>
 			</div>
-			<div class="form-group row">
-				<label for="example-datetime-local-input" class="col-xs-2 col-form-label">Date and time</label>
-				<div class="col-xs-10">
-					<input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">
+		</label>
+		<label class="row form-group">
+			<div class="col-sm-12 col-md-5 col-lg-2 col-form-label">Number from 5 to 10</div>
+			<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
+				<div class="input-group">
+					<input required type="number" name="number" class="form-control" min="5" max="10" value="5">
 				</div>
 			</div>
-			<div class="form-group row">
-				<label for="example-date-input" class="col-xs-2 col-form-label">Date</label>
-				<div class="col-xs-10">
-					<input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+		</label>
+		<!-- TODO интегрировать с тайм-пикером и автоподстановка текущей даты в плейсхолдер -->
+		<label class="row form-group">
+			<div class="col-sm-12 col-md-5 col-lg-2 col-form-label">Date and time</div>
+			<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
+				<div class="input-group">
+					<input required type="datetime-local" name="datetime-local" class="form-control" placeholder="2011-08-19T13:45:00">
 				</div>
 			</div>
-			<div class="form-group row">
-				<label for="example-month-input" class="col-xs-2 col-form-label">Month</label>
-				<div class="col-xs-10">
-					<input class="form-control" type="month" value="2011-08" id="example-month-input">
+		</label>
+		<label class="row form-group">
+			<div class="col-sm-12 col-md-5 col-lg-2 col-form-label">Date</div>
+			<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
+				<div class="input-group">
+					<input required type="date" name="date" class="form-control" placeholder="2011-08-19">
 				</div>
 			</div>
-			<div class="form-group row">
-				<label for="example-week-input" class="col-xs-2 col-form-label">Week</label>
-				<div class="col-xs-10">
-					<input class="form-control" type="week" value="2011-W33" id="example-week-input">
+		</label>
+		<label class="row form-group">
+			<div class="col-sm-12 col-md-5 col-lg-2 col-form-label">Month</div>
+			<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
+				<div class="input-group">
+					<input required type="month" name="month" class="form-control" placeholder="2011-08">
 				</div>
 			</div>
-			<div class="form-group row">
-				<label for="example-time-input" class="col-xs-2 col-form-label">Time</label>
-				<div class="col-xs-10">
-					<input class="form-control" type="time" value="13:45:00" id="example-time-input">
+		</label>
+		<label class="row form-group">
+			<div class="col-sm-12 col-md-5 col-lg-2 col-form-label">Week</div>
+			<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
+				<div class="input-group">
+					<input required type="week" name="week" class="form-control" placeholder="2011-W33">
 				</div>
 			</div>
-			<div class="form-group row">
-				<label for="example-color-input" class="col-xs-2 col-form-label">Color</label>
-				<div class="col-xs-10">
-					<input class="form-control" type="color" value="#563d7c" id="example-color-input">
+		</label>
+		<label class="row form-group">
+			<div class="col-sm-12 col-md-5 col-lg-2 col-form-label">Time</div>
+			<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
+				<div class="input-group">
+					<input required type="time" name="time" class="form-control" placeholder="13:45:00">
 				</div>
 			</div>
-		</fieldset>
-	</form>
-	<br>
-	<form>
-		<div class="form-group row">
-			<label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-			<div class="col-sm-10">
-				<input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+		</label>
+		<label class="row form-group">
+			<div class="col-sm-12 col-md-5 col-lg-2 col-form-label">Color</div>
+			<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
+				<div class="input-group">
+					<input required type="color" name="color" class="form-control" placeholder="#563d7c" value="#563d7c">
+				</div>
 			</div>
+		</label>
+		<div class="row form-group">
+			<div class="col-sm-12 col-md-5 col-lg-2 col-form-label">Text</div>
+			<div class="col-sm-12 col-md-7 col-lg-10 col-form-label">просто статичный текст</div>
 		</div>
-		<div class="form-group row">
-			<label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-			<div class="col-sm-10">
-				<input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-			</div>
-		</div>
-		<fieldset class="form-group row">
-			<legend class="col-form-legend col-sm-2">Radios</legend>
-			<div class="col-sm-10">
+		<fieldset class="row form-group">
+			<legend class="col-sm-12 col-md-5 col-lg-2 col-form-legend">Radios</legend>
+			<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
 				<div class="form-check">
 					<label class="form-check-label">
-						<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+						<input class="form-check-input" type="radio" name="gridRadios" value="option1" checked>
 						Option one is this and that&mdash;be sure to include why it's great
 					</label>
 				</div>
 				<div class="form-check">
 					<label class="form-check-label">
-						<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+						<input class="form-check-input" type="radio" name="gridRadios" value="option2">
 						Option two can be something else and selecting it will deselect option one
 					</label>
 				</div>
 				<div class="form-check disabled">
 					<label class="form-check-label">
-						<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
+						<input class="form-check-input" type="radio" name="gridRadios" value="option3" disabled>
 						Option three is disabled
 					</label>
 				</div>
 			</div>
 		</fieldset>
-		<div class="form-group row">
-			<label class="col-sm-2">Checkbox</label>
-			<div class="col-sm-10">
+		<div class="row form-group">
+			<label class="col-sm-12 col-md-5 col-lg-2 col-form-legend">Checkbox</label>
+			<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
 				<div class="form-check">
 					<label class="form-check-label">
-						<input class="form-check-input" type="checkbox"> Check me out
+						<input data-bv-notempty="true" class="form-check-input" type="checkbox"> Check me out
 					</label>
 				</div>
 			</div>
 		</div>
-		<div class="form-group row">
-			<div class="offset-sm-2 col-sm-10">
+		<div class="row form-group">
+			<div class="offset-sm-0 offset-md-5 offset-lg-2 col-sm-12 col-md-7 col-lg-10 col-form-controls">
 				<button type="submit" class="btn btn-primary">Sign in</button>
 			</div>
 		</div>
 	</form>
+
+
 
 </div>
 
