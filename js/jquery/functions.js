@@ -12,3 +12,4 @@ $.getScript(pathJSfunc+'input_width_auto.js'); // Автоподбор шири�
 
 /* для всей страницы */
 $.getScript(pathJSfunc+'plain_to_link.js'); // Преобразование текста в ссылку
+$.getScript(pathJSfunc+'preset_indicators.js'); // Предустановка индикаторов на элементы

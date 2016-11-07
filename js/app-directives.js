@@ -15,6 +15,10 @@ prototypeApp.directive('jq.tablepaging', function() {
 		rowsPerPage: 10
     } ); } };
 });
+/* расстановка индикаторов на ярлыки обязательных полей */
+prototypeApp.directive('jq.preindicators', function() {
+    return { restrict: 'A', link: function() { preset_indicators('[required]','.form-group','.col-form-label','required'); } };
+});
 /* валидация форм data-bv-validator=""
 	formvalidation.io/examples
 	bv.doc.javake.cn/examples

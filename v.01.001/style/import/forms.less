@@ -27,10 +27,28 @@
 }
 
 .col-form-label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     &:empty:after {
     	content: " "; // для контроля высоты пустых лабелов
     }
     .form-inline .form-group & { display: inline; } // для строчных форм
+    &.required:before { // для ярлыков обязательных полей
+		color: @brand-danger;
+		border-radius: 50%;
+		content: "* ";
+		display: block;
+		float: left;
+		font-family: "Times New Roman";
+		font-size: 1.5rem;
+		height: 1.4rem;
+		line-height: 1.6rem;
+		margin-left: -0.35rem;
+		padding: 0.1rem 0 0 0.3rem;
+		text-align: center;
+		width: 1.3rem;
+    }
 }
 
 .col-form-controls {
