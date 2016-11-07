@@ -4,9 +4,10 @@
 
 <div jq.validate class="jumbotron">
 	<h1>Forms Collections</h1>
-	<p>{{message}}</p>
-	<a href="http://v4-alpha.getbootstrap.com/components/forms/">v4-alpha.getbootstrap.com/components/forms</a>
-
+	<p>
+		{{message}} <br>
+		<a href="http://v4-alpha.getbootstrap.com/components/forms/">v4-alpha.getbootstrap.com/components/forms</a>
+	</p>
 	<form class="form-inline">
 		<h4>Инлайн-форма</h4>
 		<label class="form-group">
@@ -15,18 +16,18 @@
 				<input type="text" class="form-control" name="username" placeholder="Jane Doe">
 			</div>
 		</label>
-
-
 		<div class="form-group">
 			<label for="exampleInputEmail2">Email</label>
 			<input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+			<button type="button" class="btn btn-info">Verify</button>
+			<button type="button" class="btn btn-info fa fa-info-circle text-danger">info</button>
 		</div>
 		<button type="submit" class="btn btn-primary">Send invitation</button>
 	</form>
 	<br>
 	<form class="form-inline">
 		<div class="form-group">
-			<label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+			<label class="col-form-label" for="exampleInputAmount">Amount (in dollars)</label>
 			<div class="input-group">
 				<div class="input-group-addon fa fa-edit"></div>
 				<input type="text" class="form-control" id="exampleInputAmount" placeholder="Amount">
@@ -36,7 +37,6 @@
 		<button type="submit" class="btn btn-primary">Transfer cash</button>
 	</form>
 	<br>
-
 	<form>
 		<h4>Блочная форма</h4>
 		<label class="row form-group">
@@ -76,32 +76,34 @@
 				</div>
 			</div>
 		</label>
-		<label class="row form-group">
-			<div class="col-sm-12 col-md-5 col-lg-2 col-form-label">URL</div>
-			<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
-				<div class="input-group">
-					<input required type="url" name="url" class="form-control"
-					       placeholder="http://getbootstrap.com" minlength="2">
+		<div class="row">
+			<label class="col-sm-6 col-md-4 col-lg-2 form-group">
+				<div class="col-form-label">Number from 5 to 10</div>
+				<div class="col-form-controls">
+					<div class="input-group">
+						<input required type="number" name="number" class="form-control" min="5" max="10" value="5">
+					</div>
 				</div>
-			</div>
-		</label>
-		<label class="row form-group">
-			<div class="col-sm-12 col-md-5 col-lg-2 col-form-label">Telephone</div>
-			<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
-				<div class="input-group">
-					<input required type="tel" name="tel" class="form-control"
-					       placeholder="1-(555)-555-5555" minlength="2">
+			</label>
+			<label class="col-sm-6 col-md-4 col-lg-5 form-group">
+				<div class="col-form-label">URL</div>
+				<div class="col-form-controls">
+					<div class="input-group">
+						<input required type="url" name="url" class="form-control"
+						       placeholder="http://getbootstrap.com" minlength="2">
+					</div>
 				</div>
-			</div>
-		</label>
-		<label class="row form-group">
-			<div class="col-sm-12 col-md-5 col-lg-2 col-form-label">Number from 5 to 10</div>
-			<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
-				<div class="input-group">
-					<input required type="number" name="number" class="form-control" min="5" max="10" value="5">
+			</label>
+			<label class="col-sm-6 col-md-4 col-lg-5 form-group">
+				<div class="col-form-label">Telephone</div>
+				<div class="col-form-controls">
+					<div class="input-group">
+						<input required type="tel" name="tel" class="form-control"
+						       placeholder="1-(555)-555-5555" minlength="2">
+					</div>
 				</div>
-			</div>
-		</label>
+			</label>
+		</div>
 		<!-- TODO интегрировать с тайм-пикером и автоподстановка текущей даты в плейсхолдер -->
 		<label class="row form-group">
 			<div class="col-sm-12 col-md-5 col-lg-2 col-form-label">Date and time</div>

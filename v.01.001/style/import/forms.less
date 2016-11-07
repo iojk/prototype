@@ -30,6 +30,7 @@
     &:empty:after {
     	content: " "; // для контроля высоты пустых лабелов
     }
+    .form-inline .form-group & { display: inline; } // для строчных форм
 }
 
 .col-form-controls {
@@ -40,4 +41,13 @@
 	margin-top: -0.1rem; position: relative; // ликвидация вертикального сдвига чекбоксов
 }
 
+.input-group {
+	.form-inline .form-group .col-form-label+& {
+		width: auto;
+	}
+}
+
+button.btn {
+	height: 2.25rem; padding-top: 0; padding-bottom: 0;
+}
 

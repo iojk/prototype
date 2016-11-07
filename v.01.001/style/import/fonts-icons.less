@@ -16,6 +16,12 @@
 	th&, td& { display: table-cell; }
 	th&.fa-caret-down:before, th&.fa-caret-up:before { margin-left: -.2rem; }
 	i&+span { padding-left: 0.3em; } // для кнопок и ссылок с иконками
+	.btn& { min-width: 2.25rem; margin-top: 0; line-height: 1.25; padding-left: 0; padding-left: top; padding-left: bottom; } // иконки-кнопки
+	.btn& { font-family: @font-family-base; font-size: 1rem; } // иконки-кнопки
+	.btn&:before { font-family: FontAwesome; font-size: 1rem+@font-size-btn-ico-plus; }
+	.btn&:before { float: left; margin: -0.6*@font-size-btn-ico-plus 0.2rem; vertical-align: middle; }
+	.btn&:empty { padding-right: 0; &:before { float: none; } }
+	@font-size-btn-ico-plus: 0.5rem;
 }
 /* маленькие индикаторы для элементов раскрытия секций */
 [data-toggle="collapse"]:before { content: "\f196"; font-family: FontAwesome; font-size: 1rem + 0.7*@font-shift; line-height: 0; opacity: 0.5; }
