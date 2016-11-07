@@ -32,6 +32,16 @@ prototypeApp.directive('jq.validate', function() {
 		}
     } ); } };
 });
+
+prototypeApp.directive('jq.maskinput', function() {
+    return { restrict: 'A', link: function() { $('form').bootstrapValidator( {
+		feedbackIcons: {
+			valid: 'fa fa-check-circle',
+			invalid: 'fa fa-exclamation-circle',
+			validating: 'fa fa-repeat'
+		}
+    } ); } };
+});
 /* скрытие колонок в таблицах */
 prototypeApp.directive('jq.tablecols', function() {
     return { restrict: 'A', link: function() { table_cols(
