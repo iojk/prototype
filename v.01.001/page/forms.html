@@ -2,7 +2,7 @@
 
 
 
-<div jq.validate class="jumbotron">
+<div jq.validate jq.maskinput class="jumbotron">
 	<h1>Forms Collections</h1>
 	<p>
 		{{message}} <br>
@@ -98,8 +98,8 @@
 				<div class="col-form-label">Telephone</div>
 				<div class="col-form-controls">
 					<div class="input-group">
-						<input required type="tel" name="tel" class="form-control"
-						       placeholder="1-(555)-555-5555" minlength="2">
+						<input required type="tel" name="tel" class="form-control mask-phone"
+						       placeholder="8(___) ___-____" minlength="2">
 					</div>
 				</div>
 			</label>
@@ -109,7 +109,8 @@
 			<div class="col-sm-12 col-md-5 col-lg-2 col-form-label">Date and time</div>
 			<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
 				<div class="input-group">
-					<input required type="datetime-local" name="datetime-local" class="form-control" placeholder="2011-08-19T13:45:00">
+					<input required type="datetime-local" name="datetime-local" class="form-control mask-datetime" placeholder="2011-08-19T13:45:00"
+					       pattern="^\d{4}[-](0?[1-9]|1[012])[-](0?[1-9]|[12][0-9]|3[01])[T]([01]\d|2[0-3]):([0-5]\d):([0-5]\d)$">
 				</div>
 			</div>
 		</label>
@@ -117,7 +118,8 @@
 			<div class="col-sm-12 col-md-5 col-lg-2 col-form-label">Date</div>
 			<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
 				<div class="input-group">
-					<input required type="date" name="date" class="form-control" placeholder="2011-08-19">
+					<input required type="date" name="date" class="form-control mask-date" placeholder="2011-08-19"
+					       pattern="^\d{4}[-](0?[1-9]|1[012])[-](0?[1-9]|[12][0-9]|3[01])$">
 				</div>
 			</div>
 		</label>
@@ -125,7 +127,8 @@
 			<div class="col-sm-12 col-md-5 col-lg-2 col-form-label">Month</div>
 			<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
 				<div class="input-group">
-					<input required type="month" name="month" class="form-control" placeholder="2011-08">
+					<input required type="month" name="month" class="form-control mask-month" placeholder="2011-08"
+					       pattern="^\d{4}[-](0?[1-9]|1[012])$">
 				</div>
 			</div>
 		</label>
@@ -133,7 +136,8 @@
 			<div class="col-sm-12 col-md-5 col-lg-2 col-form-label">Week</div>
 			<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
 				<div class="input-group">
-					<input required type="week" name="week" class="form-control" placeholder="2011-W33">
+					<input required type="week" name="week" class="form-control mask-week" placeholder="2011-W33"
+					       pattern="^\d{4}[-][W](0?[1-9]|[1-4]\d|5[012])$">
 				</div>
 			</div>
 		</label>
@@ -141,7 +145,16 @@
 			<div class="col-sm-12 col-md-5 col-lg-2 col-form-label">Time</div>
 			<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
 				<div class="input-group">
-					<input required type="time" name="time" class="form-control" placeholder="13:45:00">
+					<input required type="time" name="time" class="form-control mask-time" placeholder="13:45:00"
+					       pattern="^([01]\d|2[0-3]):([0-5]\d):([0-5]\d)$">
+				</div>
+			</div>
+		</label>
+		<label class="row form-group">
+			<div class="col-sm-12 col-md-5 col-lg-2 col-form-label">Time Range</div>
+			<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
+				<div class="input-group">
+					<input required type="text" name="time-range" class="form-control mask-timerange" placeholder="с Hh:Mm по Hh:Mm">
 				</div>
 			</div>
 		</label>
@@ -149,7 +162,7 @@
 			<div class="col-sm-12 col-md-5 col-lg-2 col-form-label">Color</div>
 			<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
 				<div class="input-group">
-					<input required type="color" name="color" class="form-control" placeholder="#563d7c" value="#563d7c">
+					<input required type="color" name="color" class="form-control mask-color" placeholder="#563d7c" value="#563d7c">
 				</div>
 			</div>
 		</label>

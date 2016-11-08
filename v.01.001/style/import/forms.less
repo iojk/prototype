@@ -68,12 +68,21 @@
 .btn {
 	border-radius: 0;
 	border-color: rgba(0,0,0,.2);
-	border-width: 2px;
+	height: 2.25rem;
+	&:before { font-weight: normal } // иконки внутри кнопок
+}
+
+[type="color"] {
+	height: 2.5rem;
+	padding: 0;
+	border: 0;
+}
+
+button.btn {
+	padding-top: 0; padding-bottom: 0;
 }
 
 .btn-primary { font-weight: bold; }
 
-button.btn {
-	height: 2.25rem; padding-top: 0; padding-bottom: 0;
-}
+
 

@@ -10,7 +10,6 @@ $.ajax({type:'GET',cache:true,dataType:'script',url:'../cdnjs.cloudflare.com/aja
 $.ajax({type:'GET',cache:true,dataType:'script',url:'../cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js'});
 $.ajax({type:'GET',cache:true,dataType:'script',url:'../cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/language/ru_RU.min.js'});
 $.ajax({type:'GET',cache:true,dataType:'script',url:'../cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js'}); // шаблоны полей
-$.ajax({type:'GET',cache:true,dataType:'script',url:'../cdnjs.cloudflare.com/ajax/libs/autonumeric/1.9.46/autoNumeric.min.js'}); // шаблоны полей
 $.ajax({type:'GET',cache:true,dataType:'script',url:'../cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.min.js'});
 $.ajax({type:'GET',cache:true,dataType:'script',url:'../js/jquery/one-simple-table-paging.js'});
 $('body').append('<footer class="prototype-versions container-fluid" ng-include="\'../versions.html\'"></footer>');
