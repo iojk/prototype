@@ -8,6 +8,10 @@ body.container { display: block; width: auto; padding-left: 32px; padding-right:
 body.modal-open { overflow-y: scroll; }
 body > * { box-sizing: border-box; } // восстанавливаем бокс-модель бутстрапа
 
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+	padding-top: 1rem;
+}
+
 /* улучшение резкости рамок */
 .alert, .card { box-shadow: 0 0 1px rgba(0, 0, 0, 0.2); }
 
@@ -43,7 +47,7 @@ label {
 }
 
 /* Jumbotron */
-.jumbotron { margin-bottom: 0; }
+.jumbotron { margin-bottom: 0; padding-top: 0; }
 
 /* Пажинация */
 .pagination { margin-left: auto; margin-right: auto; display: table; } // выравниваем блок пажинации по центру
