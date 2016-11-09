@@ -39,11 +39,6 @@
 			<button type="submit" class="card-link btn btn-primary">Send invitation</button>
 		</div>
 	</form>
-
-
-
-
-	<br>
 	<form>
 		<h4>Блочная форма</h4>
 		<label class="row form-group">
@@ -111,60 +106,62 @@
 				</div>
 			</label>
 		</div>
-		<!-- TODO интегрировать с тайм-пикером и автоподстановка текущей даты в плейсхолдер -->
-		<label class="row form-group">
-			<div class="col-sm-12 col-md-5 col-lg-2 col-form-label">Date and time</div>
-			<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
-				<div class="input-group">
-					<input required type="datetime-local" name="datetime-local" class="form-control mask-datetime" placeholder="2011-08-19T13:45:00"
-					       pattern="^\d{4}[-](0?[1-9]|1[012])[-](0?[1-9]|[12][0-9]|3[01])[T]([01]\d|2[0-3]):([0-5]\d):([0-5]\d)$">
+		<fieldset>
+			<!-- TODO интегрировать с тайм-пикером и автоподстановка текущей даты в плейсхолдер -->
+			<label class="row form-group">
+				<div class="col-sm-12 col-md-5 col-lg-2 col-form-label">Date and time</div>
+				<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
+					<div class="input-group">
+						<input required type="datetime-local" name="datetime-local" class="form-control mask-datetime" placeholder="2011-08-19T13:45:00"
+						       pattern="^\d{4}[-](0?[1-9]|1[012])[-](0?[1-9]|[12][0-9]|3[01])[T]([01]\d|2[0-3]):([0-5]\d):([0-5]\d)$">
+					</div>
 				</div>
-			</div>
-		</label>
-		<label class="row form-group">
-			<div class="col-sm-12 col-md-5 col-lg-2 col-form-label">Date</div>
-			<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
-				<div class="input-group">
-					<input required type="date" name="date" class="form-control mask-date" placeholder="2011-08-19"
-					       pattern="^\d{4}[-](0?[1-9]|1[012])[-](0?[1-9]|[12][0-9]|3[01])$">
+			</label>
+			<label class="row form-group">
+				<div class="col-sm-12 col-md-5 col-lg-2 col-form-label">Date</div>
+				<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
+					<div class="input-group">
+						<input required type="date" name="date" class="form-control mask-date" placeholder="2011-08-19"
+						       pattern="^\d{4}[-](0?[1-9]|1[012])[-](0?[1-9]|[12][0-9]|3[01])$">
+					</div>
 				</div>
-			</div>
-		</label>
-		<label class="row form-group">
-			<div class="col-sm-12 col-md-5 col-lg-2 col-form-label">Month</div>
-			<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
-				<div class="input-group">
-					<input required type="month" name="month" class="form-control mask-month" placeholder="2011-08"
-					       pattern="^\d{4}[-](0?[1-9]|1[012])$">
+			</label>
+			<label class="row form-group">
+				<div class="col-sm-12 col-md-5 col-lg-2 col-form-label">Month</div>
+				<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
+					<div class="input-group">
+						<input required type="month" name="month" class="form-control mask-month" placeholder="2011-08"
+						       pattern="^\d{4}[-](0?[1-9]|1[012])$">
+					</div>
 				</div>
-			</div>
-		</label>
-		<label class="row form-group">
-			<div class="col-sm-12 col-md-5 col-lg-2 col-form-label">Week</div>
-			<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
-				<div class="input-group">
-					<input required type="week" name="week" class="form-control mask-week" placeholder="2011-W33"
-					       pattern="^\d{4}[-][W](0?[1-9]|[1-4]\d|5[012])$">
+			</label>
+			<label class="row form-group">
+				<div class="col-sm-12 col-md-5 col-lg-2 col-form-label">Week</div>
+				<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
+					<div class="input-group">
+						<input required type="week" name="week" class="form-control mask-week" placeholder="2011-W33"
+						       pattern="^\d{4}[-][W](0?[1-9]|[1-4]\d|5[012])$">
+					</div>
 				</div>
-			</div>
-		</label>
-		<label class="row form-group">
-			<div class="col-sm-12 col-md-5 col-lg-2 col-form-label">Time</div>
-			<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
-				<div class="input-group">
-					<input required type="time" name="time" class="form-control mask-time" placeholder="13:45:00"
-					       pattern="^([01]\d|2[0-3]):([0-5]\d):([0-5]\d)$">
+			</label>
+			<label class="row form-group">
+				<div class="col-sm-12 col-md-5 col-lg-2 col-form-label">Time</div>
+				<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
+					<div class="input-group">
+						<input required type="time" name="time" class="form-control mask-time" placeholder="13:45:00"
+						       pattern="^([01]\d|2[0-3]):([0-5]\d):([0-5]\d)$">
+					</div>
 				</div>
-			</div>
-		</label>
-		<label class="row form-group">
-			<div class="col-sm-12 col-md-5 col-lg-2 col-form-label">Time Range</div>
-			<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
-				<div class="input-group">
-					<input required type="text" name="time-range" class="form-control mask-timerange" placeholder="с Hh:Mm по Hh:Mm">
+			</label>
+			<label class="row form-group">
+				<div class="col-sm-12 col-md-5 col-lg-2 col-form-label">Time Range</div>
+				<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
+					<div class="input-group">
+						<input required type="text" name="time-range" class="form-control mask-timerange" placeholder="с Hh:Mm по Hh:Mm">
+					</div>
 				</div>
-			</div>
-		</label>
+			</label>
+		</fieldset>
 		<label class="row form-group">
 			<div class="col-sm-12 col-md-5 col-lg-2 col-form-label">Color</div>
 			<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
@@ -177,26 +174,28 @@
 			<div class="col-sm-12 col-md-5 col-lg-2 col-form-label">Text</div>
 			<div class="col-sm-12 col-md-7 col-lg-10 col-form-label">просто статичный текст</div>
 		</div>
-		<fieldset class="row form-group">
-			<legend class="col-sm-12 col-md-5 col-lg-2 col-form-legend">Radios</legend>
-			<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
-				<div class="form-check">
-					<label class="form-check-label">
-						<input class="form-check-input" type="radio" name="gridRadios" value="option1" checked>
-						Option one is this and that&mdash;be sure to include why it's great
-					</label>
-				</div>
-				<div class="form-check">
-					<label class="form-check-label">
-						<input class="form-check-input" type="radio" name="gridRadios" value="option2">
-						Option two can be something else and selecting it will deselect option one
-					</label>
-				</div>
-				<div class="form-check disabled">
-					<label class="form-check-label">
-						<input class="form-check-input" type="radio" name="gridRadios" value="option3" disabled>
-						Option three is disabled
-					</label>
+		<fieldset>
+			<div class="row form-group">
+				<legend class="col-sm-12 col-md-5 col-lg-2 col-form-legend">Radios</legend>
+				<div class="col-sm-12 col-md-7 col-lg-10 col-form-controls">
+					<div class="form-check">
+						<label class="form-check-label">
+							<input class="form-check-input" type="radio" name="gridRadios" value="option1" checked>
+							Option one is this and that&mdash;be sure to include why it's great
+						</label>
+					</div>
+					<div class="form-check">
+						<label class="form-check-label">
+							<input class="form-check-input" type="radio" name="gridRadios" value="option2">
+							Option two can be something else and selecting it will deselect option one
+						</label>
+					</div>
+					<div class="form-check disabled">
+						<label class="form-check-label">
+							<input class="form-check-input" type="radio" name="gridRadios" value="option3" disabled>
+							Option three is disabled
+						</label>
+					</div>
 				</div>
 			</div>
 		</fieldset>
