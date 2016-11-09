@@ -18,9 +18,18 @@ body > * { box-sizing: border-box; } // восстанавливаем бокс-
 	padding-bottom: .88*@btn-block-spacing-y;
 	padding-top:    .88*@btn-block-spacing-y;
 }
+.form-control, .input-group-addon, .col-form-label {
+	padding-bottom: .88*@btn-block-spacing-y;
+	padding-top:    .88*@btn-block-spacing-y;
+}
+.col-form-label {
+	border: 1px solid transparent;
+    vertical-align: middle;
+}
 
 /* Элементы форм */
 label {
+	vertical-align: middle; margin: 0;
 	&.row { display: block } // для обеспечения вертикального деления секций форм
 	&:hover .form-control  { border-color: @input-border-focus; } // подсветка контрола по наведению на его ярлык
 }

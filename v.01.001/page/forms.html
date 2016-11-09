@@ -8,34 +8,41 @@
 		{{message}} <br>
 		<a href="http://v4-alpha.getbootstrap.com/components/forms/">v4-alpha.getbootstrap.com/components/forms</a>
 	</p>
-	<form class="form-inline">
-		<h4>Инлайн-форма</h4>
-		<label class="form-group">
-			<div class="col-form-label">Name</div>
-			<div class="input-group">
-				<input type="text" class="form-control" name="username" placeholder="Jane Doe">
+
+	<form class="card form-inline">
+		<div class="card-block">
+			<h4 class="card-title">Инлайн-форма</h4>
+			<h6 class="card-subtitle text-muted">для простых случаев</h6>
+			<div class="card-text">
+				<label class="form-group">
+					<div class="col-form-label">Name</div>
+					<div class="input-group">
+						<input type="text" class="form-control" name="username" placeholder="Jane Doe">
+					</div>
+				</label>
+				<div class="form-group">
+					<label for="exampleInputEmail2">Email</label>
+					<input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+					<button type="button" class="btn btn-info">Verify</button>
+					<button type="button" class="btn btn-info fa fa-info-circle text-danger">info</button>
+				</div>
+				<div class="form-group">
+					<label class="col-form-label" for="exampleInputAmount">Amount (in dollars)</label>
+					<div class="input-group">
+						<div class="input-group-addon fa fa-edit"></div>
+						<input type="text" class="form-control" id="exampleInputAmount" placeholder="Amount">
+						<div class="input-group-addon">.00</div>
+					</div>
+				</div>
+				<button type="submit" class="btn btn-primary">Transfer cash</button>
 			</div>
-		</label>
-		<div class="form-group">
-			<label for="exampleInputEmail2">Email</label>
-			<input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
-			<button type="button" class="btn btn-info">Verify</button>
-			<button type="button" class="btn btn-info fa fa-info-circle text-danger">info</button>
+			<button type="submit" class="card-link btn btn-primary">Send invitation</button>
 		</div>
-		<button type="submit" class="btn btn-primary">Send invitation</button>
 	</form>
-	<br>
-	<form class="form-inline">
-		<div class="form-group">
-			<label class="col-form-label" for="exampleInputAmount">Amount (in dollars)</label>
-			<div class="input-group">
-				<div class="input-group-addon fa fa-edit"></div>
-				<input type="text" class="form-control" id="exampleInputAmount" placeholder="Amount">
-				<div class="input-group-addon">.00</div>
-			</div>
-		</div>
-		<button type="submit" class="btn btn-primary">Transfer cash</button>
-	</form>
+
+
+
+
 	<br>
 	<form>
 		<h4>Блочная форма</h4>

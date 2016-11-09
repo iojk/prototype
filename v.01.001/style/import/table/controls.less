@@ -42,7 +42,7 @@ th.expandable {
 	&:active { overflow: visible; white-space: normal; .noselect; }
 	.text-right &:active {  }
 	&:after { // все ради только курсора, чтобы его показать точно в месте трех точек!
-		content: "";
+		content: " "; // нужен обязательно пробел, чтобы разворачивание с фиксацией работало
 		cursor: pointer;
 		display: inline-block;
 		float: right;
